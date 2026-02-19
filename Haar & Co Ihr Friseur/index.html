@@ -1,0 +1,216 @@
+```html
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haar & Co Ihr Friseur - Moderne Styles für Sie</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0uXK0PkFTknySjtkIZ+sC8oVzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Optional: Custom scroll-padding-top für feste Header */
+        html {
+            scroll-padding-top: 80px; /* Adjust this value based on your header's height */
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-gray-50">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-gray-800 tracking-tight">
+                Haar & <span class="text-teal-600">Co</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-lg">
+                <a href="#leistungen" class="text-gray-700 hover:text-teal-600 transition duration-300 font-medium">Leistungen</a>
+                <a href="#kontakt" class="text-gray-700 hover:text-teal-600 transition duration-300 font-medium">Kontakt</a>
+                <a href="#termin" class="px-6 py-2 bg-teal-600 text-white rounded-full hover:bg-teal-700 transition duration-300 shadow-lg font-semibold">Termin buchen</a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button class="md:hidden text-gray-600 hover:text-teal-600 focus:outline-none" aria-label="Toggle navigation">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1596460143899-7fce6c5b051e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80'); padding-top: 6rem;">
+        <div class="absolute inset-0 bg-black opacity-55"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight drop-shadow-lg mb-6">
+                Ihr Friseur für <span class="text-teal-400">moderne Styles</span> & perfektes Aussehen
+            </h1>
+            <p class="text-xl md:text-2xl font-light max-w-3xl mb-10 opacity-90">
+                Bei Haar & Co verwandeln wir Ihre Vision in Realität. Erleben Sie Präzision, Leidenschaft und Stil, der begeistert.
+            </p>
+            <a href="#termin" class="px-10 py-5 bg-teal-600 text-white text-xl font-bold rounded-full hover:bg-teal-700 transition duration-300 shadow-xl transform hover:scale-105">
+                Jetzt Termin buchen
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="leistungen" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-extrabold text-center text-gray-800 mb-16">Unsere Leistungen</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-10 text-center transform hover:scale-105 transition duration-300 border border-gray-100">
+                    <div class="text-6xl text-teal-600 mb-6">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">Haarschnitte</h3>
+                    <p class="text-gray-700 text-lg">
+                        Von klassisch bis topmodern – präzise Schnitte für Damen, Herren und Kinder, die Ihren individuellen Stil unterstreichen.
+                    </p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-10 text-center transform hover:scale-105 transition duration-300 border border-gray-100">
+                    <div class="text-6xl text-teal-600 mb-6">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">Colorationen</h3>
+                    <p class="text-gray-700 text-lg">
+                        Professionelle Farbberatung und brillante Farbergebnisse, von subtilen Highlights bis zu lebendigen Totalveränderungen.
+                    </p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-10 text-center transform hover:scale-105 transition duration-300 border border-gray-100">
+                    <div class="text-6xl text-teal-600 mb-6">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">Styling & Hochstecken</h3>
+                    <p class="text-gray-700 text-lg">
+                        Für jeden Anlass das perfekte Styling – von eleganten Hochsteckfrisuren bis zu lässigen Beach Waves.
+                    </p>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-xl shadow-lg p-10 text-center transform hover:scale-105 transition duration-300 border border-gray-100">
+                    <div class="text-6xl text-teal-600 mb-6">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">Haarpflege & Treatments</h3>
+                    <p class="text-gray-700 text-lg">
+                        Individuelle Behandlungen für gesundes, glänzendes und kräftiges Haar, abgestimmt auf Ihre Bedürfnisse.
+                    </p>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-xl shadow-lg p-10 text-center transform hover:scale-105 transition duration-300 border border-gray-100">
+                    <div class="text-6xl text-teal-600 mb-6">
+                        <i class="fas fa-ruler-horizontal"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">Strähnen & Balayage</h3>
+                    <p class="text-gray-700 text-lg">
+                        Natürliche Highlights oder ausdrucksstarke Effekte mit den neuesten Strähnchen- und Balayage-Techniken.
+                    </p>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="bg-white rounded-xl shadow-lg p-10 text-center transform hover:scale-105 transition duration-300 border border-gray-100">
+                    <div class="text-6xl text-teal-600 mb-6">
+                        <i class="fas fa-beard"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">Bartpflege für Herren</h3>
+                    <p class="text-gray-700 text-lg">
+                        Professionelle Bartpflege, Styling und Konturen für den gepflegten und stilbewussten Mann.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-extrabold text-center text-gray-800 mb-16">Kontakt & Terminbuchung</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <!-- Contact Info -->
+                <div class="bg-gray-50 p-10 rounded-xl shadow-lg border border-gray-100">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8">Wir freuen uns auf Sie!</h3>
+                    <div class="space-y-6 text-lg text-gray-700">
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt text-teal-600 w-8 text-xl mr-3"></i> Musterstraße 123, 12345 Musterstadt</p>
+                        <p class="flex items-center"><i class="fas fa-phone-alt text-teal-600 w-8 text-xl mr-3"></i> <a href="tel:+491234567890" class="hover:text-teal-600">+49 123 4567890</a></p>
+                        <p class="flex items-center"><i class="fas fa-envelope text-teal-600 w-8 text-xl mr-3"></i> <a href="mailto:info@haarundco.de" class="hover:text-teal-600">info@haarundco.de</a></p>
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-teal-600 w-8 text-xl mr-3 mt-1"></i>
+                            <div>
+                                <strong class="block mb-1">Öffnungszeiten:</strong>
+                                <p>Mo - Fr: 09:00 - 18:00 Uhr</p>
+                                <p>Sa: 09:00 - 14:00 Uhr</p>
+                                <p>So: Geschlossen</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" id="termin" class="mt-10 inline-block px-10 py-4 bg-teal-600 text-white text-xl font-bold rounded-full hover:bg-teal-700 transition duration-300 shadow-xl transform hover:scale-105">
+                        Online Termin vereinbaren
+                    </a>
+                </div>
+
+                <!-- Map Embed -->
+                <div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8">So finden Sie uns:</h3>
+                    <div class="aspect-w-16 aspect-h-9 w-full rounded-xl overflow-hidden shadow-xl border border-gray-100">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.6166417772273!2d13.400000000000000!3d52.520000000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e3778a3f81f%3A0x1c9b6f8f5e7a9c8!2sBrandenburger%20Tor!5e0!3m2!1sde!2sde!4v1678888888888!5m2!1sde!2sde"
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg">&copy; 2023 Haar & Co Ihr Friseur. Alle Rechte vorbehalten.</p>
+            <div class="mt-6 flex justify-center space-x-8 text-3xl">
+                <a href="#" class="hover:text-teal-600 transition duration-300" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-teal-600 transition duration-300" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-teal-600 transition duration-300" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Mobile Menu Toggle (Requires JavaScript for functionality) -->
+    <!-- For demonstration, the button exists, but a full mobile menu implementation needs JS to toggle classes on a menu element -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.querySelector('header button');
+            const navLinks = document.querySelector('header .md:flex'); // Select the desktop nav links, which would be hidden/shown on mobile
+            
+            // This is a minimal example; a full mobile menu would typically involve
+            // creating a separate mobile menu element or making the desktop nav mobile-friendly
+            // by toggling 'hidden' and other layout classes.
+            // For pure HTML output, we keep the JS simple and illustrative.
+            menuButton.addEventListener('click', () => {
+                navLinks.classList.toggle('hidden'); // Toggles visibility for mobile (simplistic)
+                navLinks.classList.toggle('flex');
+                navLinks.classList.toggle('flex-col');
+                navLinks.classList.toggle('absolute');
+                navLinks.classList.toggle('top-full');
+                navLinks.classList.toggle('left-0');
+                navLinks.classList.toggle('bg-white');
+                navLinks.classList.toggle('w-full');
+                navLinks.classList.toggle('shadow-lg');
+                navLinks.classList.toggle('py-4');
+                navLinks.classList.toggle('items-center');
+                navLinks.classList.toggle('space-y-4');
+                navLinks.classList.toggle('space-x-0');
+            });
+
+            // Close mobile menu when a link is clicked
+            document.querySelectorAll('header a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!navLinks.classList.contains('hidden') && window.innerWidth < 768) {
+                        menuButton.click(); // Simulate button click to close menu
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+```
