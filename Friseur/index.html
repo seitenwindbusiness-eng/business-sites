@@ -1,0 +1,219 @@
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchnittKünstler – Ihr Friseur für stilvolle Looks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-down {
+            animation: fadeInDown 1s ease-out forwards;
+            animation-fill-mode: both;
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            animation-fill-mode: both;
+        }
+        .animate-fade-in-up.delay-200 {
+            animation-delay: 0.2s;
+        }
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1596464640964-b9d997f748ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQzNzZ8MHwxfHNlYXJjaHw3fHBoZWFuZHJpZXIlMjBzYWxvbnxlbnwwfHx8fDE3MTU0NjgzODh8MA&ixlib=rb-4.0.3&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .hero-gradient-overlay {
+            background: linear-gradient(to right top, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+        }
+        .section-gradient-bg {
+             background: linear-gradient(to bottom, #f9fafb, #edf2f7);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .transition-all {
+            transition-property: all;
+            transition-duration: 300ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+
+    <!-- Hero Section -->
+    <section class="hero-bg relative h-screen flex items-center justify-center text-center text-white">
+        <div class="hero-gradient-overlay absolute inset-0"></div>
+        <div class="relative z-10 p-6 md:p-12 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-down">
+                Ihr neuer Look beginnt hier.
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up">
+                Entdecken Sie professionelle Haarschnitte, Farben und Stylings, die Ihre Persönlichkeit unterstreichen.
+            </p>
+            <a href="#kontakt" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all transform hover:scale-105 inline-block animate-fade-in-up delay-200">
+                Jetzt Termin vereinbaren
+            </a>
+        </div>
+    </section>
+
+    <!-- Leistungen Section -->
+    <section id="leistungen" class="py-16 md:py-24 bg-white section-gradient-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-12 text-gray-900">Unsere Leistungen</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-shadow transition-all card-hover">
+                    <img src="https://images.unsplash.com/photo-1582234032540-cc2733d7b43b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQzNzZ8MHwxfHNlYXJjaHwzfHBoZWFuZHJpZXIlMjBzYWxvbiUyMGhlcnJpZnJpc3VyfGVufDB8fHx8MTcxNTQ2ODM4OHww&ixlib=rb-4.0.3&q=80&w=400" alt="Herren Haarschnitt" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Herren Haarschnitt</h3>
+                        <p class="text-gray-600">Moderne und klassische Haarschnitte, Bartpflege und Styling für den anspruchsvollen Mann.</p>
+                    </div>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-shadow transition-all card-hover">
+                    <img src="https://images.unsplash.com/photo-1596464640964-b9d997f748ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQzNzZ8MHwxfHNlYXJjaHw3fHBoZWFuZHJpZXIlMjBzYWxvbiUyMGRhbWVuZnJpc3VyfGVufDB8fHx8MTcxNTQ2ODM4OHww&ixlib=rb-4.0.3&q=80&w=400" alt="Damen Haarschnitt" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Damen Haarschnitt & Styling</h3>
+                        <p class="text-gray-600">Von Trendfrisuren bis zum klassischen Schnitt – inklusive individueller Beratung.</p>
+                    </div>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-shadow transition-all card-hover">
+                    <img src="https://images.unsplash.com/photo-1521539413727-80949d034789?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQzNzZ8MHwxfHNlYXJjaHw5fHBoZWFuZHJpZXIlMjBzYWxvbiUyMGZhcmJlbnxlbnwwfHx8fDE3MTU0NjgzODh8MA&ixlib=rb-4.0.3&q=80&w=400" alt="Haare Färben" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Farbe & Strähnen</h3>
+                        <p class="text-gray-600">Intensive Farben, natürliche Highlights oder Balayage – für ein strahlendes Ergebnis.</p>
+                    </div>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-shadow transition-all card-hover">
+                    <img src="https://images.unsplash.com/photo-1557999710-388e404b9015?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQzNzZ8MHwxfHNlYXJjaHwxNXx8aGFpcmluZyUyMGJyYWlkYWx8ZW58MHx8fHwxNzE1NDY4MzgzfDA&ixlib=rb-4.0.3&q=80&w=400" alt="Hochzeitsfrisuren" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Braut- & Hochsteckfrisuren</h3>
+                        <p class="text-gray-600">Perfekte Frisuren für besondere Anlässe, die den ganzen Tag halten.</p>
+                    </div>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-shadow transition-all card-hover">
+                    <img src="https://images.unsplash.com/photo-1621376840788-b76551b9247d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQzNzZ8MHwxfHNlYXJjaHw5fHBoZWFuZHJpZXIlMjBzYWxvbiUyMGtpbmRlcnxlbnwwfHx8fDE3MTU0NjgzODh8MA&ixlib=rb-4.0.3&q=80&w=400" alt="Kinder Haarschnitt" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Kinder Haarschnitt</h3>
+                        <p class="text-gray-600">Geduldige und kindgerechte Schnitte für unsere jüngsten Kunden.</p>
+                    </div>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-shadow transition-all card-hover">
+                    <img src="https://images.unsplash.com/photo-1538356262955-f86a98293774?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQzNzZ8MHwxfHNlYXJjaHw3fHBoZWFuZHJpZXIlMjBzYWxvbiUyMGhhYWxwZmVnZSVFMiU4MCU4NHxlbnwwfHx8fDE3MTU0NjgzODh8MA&ixlib=rb-4.0.3&q=80&w=400" alt="Haarpflege" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Intensive Haarpflege</h3>
+                        <p class="text-gray-600">Pflegende Behandlungen für gesundes, glänzendes Haar, angepasst an Ihre Bedürfnisse.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6 text-center max-w-3xl">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-8 text-gray-900">Über Uns</h2>
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                Bei SchnittKünstler leben wir die Leidenschaft für schönes Haar. Unser erfahrenes Team kreiert nicht nur Frisuren, sondern echte Wohlfühlerlebnisse. Wir legen Wert auf individuelle Beratung, höchste Qualität und verwenden ausschließlich hochwertige Produkte, um Ihre Schönheit perfekt in Szene zu setzen. Vertrauen Sie auf unser Know-how und lassen Sie sich verwöhnen!
+            </p>
+        </div>
+    </section>
+
+    <!-- Kontakt Section -->
+    <section id="kontakt" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-12 text-gray-900">Kontakt & Termin</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Contact Form -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-gray-900">Senden Sie uns eine Nachricht</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 sm:text-sm" placeholder="Ihr Name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">E-Mail</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 sm:text-sm" placeholder="Ihre E-Mail-Adresse">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Nachricht</label>
+                            <textarea id="message" name="message" rows="5" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 sm:text-sm" placeholder="Ihre Nachricht oder Terminanfrage..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition-all transform hover:scale-105">
+                            Nachricht senden
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Details & Map -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-900">Unsere Details</h3>
+                    <div class="space-y-4 text-gray-700">
+                        <p><strong class="font-semibold">Adresse:</strong> Musterstraße 123, 12345 Musterstadt</p>
+                        <p><strong class="font-semibold">Telefon:</strong> <a href="tel:+49123456789" class="text-red-600 hover:underline">+49 123 456789</a></p>
+                        <p><strong class="font-semibold">E-Mail:</strong> <a href="mailto:info@schnittkuenstler.de" class="text-red-600 hover:underline">info@schnittkuenstler.de</a></p>
+                        <p><strong class="font-semibold">Öffnungszeiten:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Mo-Fr: 09:00 - 18:00 Uhr</li>
+                            <li>Sa: 09:00 - 14:00 Uhr</li>
+                            <li>So: Geschlossen</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-xl font-bold mb-4 text-gray-900">Finden Sie uns hier:</h4>
+                        <!-- Ersetzen Sie den iframe-Inhalt durch Ihre tatsächliche Google Maps Embed-URL -->
+                        <div class="h-64 bg-gray-200 rounded-md overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.169123456789!2d13.404954!3d52.520008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e68e4c7e6c9%3A0x5e3f4b5c7d8a9b0c!2sBrandenburger%20Tor!5e0!3m2!1sde!2sde!4v1678901234567!5m2!1sde%212sde" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2023 SchnittKünstler. Alle Rechte vorbehalten.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:underline text-gray-400">Impressum</a>
+                <a href="#" class="hover:underline text-gray-400">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+```
