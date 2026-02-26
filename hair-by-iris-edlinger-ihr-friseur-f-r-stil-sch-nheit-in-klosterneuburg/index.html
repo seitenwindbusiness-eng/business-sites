@@ -1,0 +1,242 @@
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair by Iris Edlinger - Ihr Friseur für Stil & Schönheit in Klosterneuburg</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Optional: Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333; /* Dark gray for text */
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1549440620-802c608a2df9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80'); /* Ersetzen Sie dieses Bild mit einem passenden Salon-Hintergrundbild */
+            background-size: cover;
+            background-position: center;
+        }
+        @keyframes fadeInMoveUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInMoveUp 0.8s ease-out forwards;
+            opacity: 0; /* Start hidden */
+        }
+        .animate-fade-in-up.delay-200 {
+            animation-delay: 0.2s;
+        }
+        .animate-fade-in-up.delay-400 {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-sm py-4 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-6 md:px-10">
+            <a href="#" class="text-2xl font-bold text-gray-800 tracking-tight">Hair by <span class="text-indigo-600">Iris Edlinger</span></a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-indigo-600 transition duration-300">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-indigo-600 transition duration-300">Leistungen</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition duration-300">Kontakt</a>
+            </nav>
+            <div class="md:hidden">
+                <!-- Mobile Menu Button (requires JS to function) -->
+                <button class="text-gray-600 hover:text-indigo-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 px-6 md:px-10 max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up">
+                Ihr Stil, unsere Leidenschaft.
+            </h1>
+            <p class="text-lg md:text-xl mb-8 font-light max-w-2xl mx-auto animate-fade-in-up delay-200">
+                Verwandeln Sie Ihren Look bei <span class="font-semibold text-indigo-200">Hair by Iris Edlinger</span> – wo Expertise auf Kreativität trifft.
+            </p>
+            <a href="tel:06642349870" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full text-lg shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-up delay-400">
+                Jetzt Termin vereinbaren
+            </a>
+            
+            <!-- Rating and Phone Number for Hero -->
+            <div class="mt-12 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+                <div class="flex items-center bg-white bg-opacity-15 p-3 rounded-lg backdrop-blur-sm shadow-md">
+                    <div class="flex text-yellow-400 mr-2">
+                        <!-- 5 stars -->
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <span class="text-white text-md font-medium">5.0 von 5 Sternen (<span class="font-semibold">10</span> Bewertungen)</span>
+                </div>
+                <div class="flex items-center bg-white bg-opacity-15 p-3 rounded-lg backdrop-blur-sm shadow-md">
+                    <svg class="w-5 h-5 text-indigo-200 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                    <a href="tel:06642349870" class="text-white text-md font-medium hover:text-indigo-200 transition duration-300">
+                        0664 2349870
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-6 md:px-10 text-center">
+            <h2 class="text-4xl font-extrabold text-gray-800 mb-6">Unsere <span class="text-indigo-600">Leistungen</span></h2>
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+                Entdecken Sie unser vielfältiges Angebot, das auf Ihre individuellen Bedürfnisse zugeschnitten ist.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-8 hover:shadow-xl transform hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Haarschnitte & Styling</h3>
+                    <p class="text-gray-600">Von klassischen Schnitten bis zu modernen Trendfrisuren – für Damen, Herren und Kinder.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-8 hover:shadow-xl transform hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Färben & Strähnen</h3>
+                    <p class="text-gray-600">Umfassende Farbberatung und brillante Ergebnisse, von Naturtönen bis zu kreativen Highlights.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-8 hover:shadow-xl transform hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Hochzeitsfrisuren</h3>
+                    <p class="text-gray-600">Perfektes Styling für Ihren schönsten Tag, individuell abgestimmt und unvergesslich.</p>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-8 hover:shadow-xl transform hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Haarpflege & Treatments</h3>
+                    <p class="text-gray-600">Intensive Pflege für gesundes und glänzendes Haar, angepasst an Ihren Haartyp.</p>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-8 hover:shadow-xl transform hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Bartpflege</h3>
+                    <p class="text-gray-600">Professionelle Bartpflege und Styling für den modernen Mann.</p>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-8 hover:shadow-xl transform hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Extensions</h3>
+                    <p class="text-gray-600">Für mehr Volumen und Länge – natürlich wirkende Haarverlängerungen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 md:px-10 text-center">
+            <h2 class="text-4xl font-extrabold text-gray-800 mb-6">Kontakt & Anfahrt</h2>
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+                Wir freuen uns auf Ihren Besuch oder Ihre Nachricht!
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start text-left">
+                <!-- Contact Info -->
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Ihre Friseurin in Klosterneuburg</h3>
+                    <div class="space-y-4">
+                        <p class="flex items-center text-gray-700">
+                            <svg class="w-6 h-6 text-indigo-600 mr-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                            <a href="tel:06642349870" class="hover:text-indigo-600 transition duration-300 font-medium">0664 2349870</a>
+                        </p>
+                        <p class="flex items-center text-gray-700">
+                            <svg class="w-6 h-6 text-indigo-600 mr-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                            <a href="https://maps.google.com/?q=Brandmayerstraße 8, 3400 Klosterneuburg, Austria" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 transition duration-300 font-medium">
+                                Brandmayerstraße 8, <br>3400 Klosterneuburg, Austria
+                            </a>
+                        </p>
+                        <p class="flex items-center text-gray-700">
+                            <svg class="w-6 h-6 text-indigo-600 mr-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l3 3a1 1 0 001.414-1.414L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                            Öffnungszeiten: Nach Vereinbarung
+                        </p>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-4">Finden Sie uns auf Google Maps:</h4>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2654.516828859062!2d16.32684997682226!3d48.30792037128692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d0566270b201f%3A0x77c223c2a688a444!2sBrandmayerstra%C3%9Fe%208%2C%203400%20Klosterneuburg%2C%20Austria!5e0!3m2!1sen!2sat!4v1701000000000!5m2!1sen!2sat"
+                            width="100%"
+                            height="300"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-lg shadow-sm"
+                            title="Google Maps Standort von Hair by Iris Edlinger"
+                        ></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form (Optional) -->
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Senden Sie uns eine Nachricht</h3>
+                    <form action="#" method="POST" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">E-Mail</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Nachricht</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-md shadow-md transform hover:scale-105 transition duration-300">
+                                Nachricht senden
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 md:px-10 text-center">
+            <p>&copy; 2023 Hair by Iris Edlinger. Alle Rechte vorbehalten.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Datenschutz</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Impressum</a>
+                <!-- Optional: Social media links -->
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300" aria-label="Facebook">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22H12c5.523 0 10-4.477 10-10z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.002 3.714.051 1.104.067 1.791.22 2.224.469.484.259.864.639 1.123 1.123.249.433.402 1.12.468 2.224.049.93.051 1.286.051 3.714s-.002 2.784-.051 3.714c-.067 1.104-.22 1.791-.469 2.224-.259.484-.639.864-1.123 1.123-.433.249-1.12.402-2.224.468-.93.049-1.286.051-3.714.051s-2.784-.002-3.714-.051c-1.104-.067-1.791-.22-2.224-.469-.484-.259-.864-.639-1.123-1.123-.249-.433-.402-1.12-.468-2.224-.049-.93-.051-1.286-.051-3.714s.002-2.784.051-3.714c.067-1.104.22-1.791.469-2.224.259-.484.639-.864 1.123-1.123.433-.249 1.12-.402 2.224-.468.93-.049 1.286-.051 3.714-.051zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+```
