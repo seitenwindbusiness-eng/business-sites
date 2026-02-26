@@ -4,293 +4,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friseur Eleganz - Ihr Stil, Unsere Leidenschaft</title>
+    <title>Friseur Eleganz | Ihr Stil, Unsere Leidenschaft</title>
+    <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Optional custom styles for animations and background */
-        .hero-background {
-            background-image: url('https://images.unsplash.com/photo-1503951458535-c7255d642e05?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Beispielbild */
+        /* Custom background image for the hero section */
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1596465481744-8d93708a3d69?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Beispielbild für einen Friseursalon */
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Für Parallax-Effekt */
-        }
-        .section-separator {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: #d1b48b; /* Ein goldener/eleganter Farbton */
-            margin: 0 auto 2.5rem auto;
-            border-radius: 2px;
-        }
-
-        /* Keyframe for fade-in-up animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        /* Keyframe for fade-in animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .animate-fade-in-up {
-            animation: fadeInUp 1s ease-out forwards;
-        }
-        .animate-fade-in {
-            animation: fadeIn 1.5s ease-out forwards;
-        }
-        .animate-fade-in-delay {
-            animation: fadeIn 1.5s ease-out 0.5s forwards; /* Add a delay */
-        }
-        /* Set initial state for animations */
-        .animate-fade-in-up, .animate-fade-in, .animate-fade-in-delay {
-            opacity: 0;
         }
     </style>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-gray-50">
+<body class="font-sans text-gray-800 antialiased">
 
     <!-- Header / Navigation -->
-    <header class="bg-white shadow-lg py-4 fixed w-full z-50">
-        <nav class="container mx-auto flex justify-between items-center px-6">
-            <a href="#" class="text-3xl font-bold text-gray-900 tracking-wider">Friseur <span class="text-yellow-700">Eleganz</span></a>
-            <!-- Desktop Links -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold text-gray-900 hover:text-indigo-600 transition duration-300 ease-in-out">Friseur Eleganz</a>
             <div class="hidden md:flex space-x-8">
-                <a href="#leistungen" class="text-lg text-gray-700 hover:text-yellow-700 transition duration-300">Leistungen</a>
-                <a href="#kontakt" class="text-lg text-gray-700 hover:text-yellow-700 transition duration-300">Kontakt</a>
+                <a href="#hero" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 ease-in-out">Home</a>
+                <a href="#leistungen" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 ease-in-out">Leistungen</a>
+                <a href="#kontakt" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 ease-in-out">Kontakt</a>
             </div>
-            <!-- Mobile Menu Button (Hamburger) -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-            <!-- Mobile Menu Links (initially hidden) -->
-            <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 flex-col space-y-4 items-center">
-                <a href="#leistungen" class="text-lg text-gray-700 hover:text-yellow-700 transition duration-300 block">Leistungen</a>
-                <a href="#kontakt" class="text-lg text-gray-700 hover:text-yellow-700 transition duration-300 block">Kontakt</a>
+            <!-- Mobile Menu Button (functionality would require JS) -->
+            <div class="md:hidden">
+                <button class="text-gray-600 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-background relative h-screen flex items-center justify-center text-center text-white py-20 px-6">
-        <div class="absolute inset-0 bg-black opacity-60"></div>
-        <div class="relative z-10 max-w-4xl">
-            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 animate-fade-in-up">
-                Ihr Stil, unsere Leidenschaft für Perfektion.
+    <section id="hero" class="hero-bg relative h-screen flex items-center justify-center text-center pt-20">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 text-white p-8 max-w-3xl mx-auto">
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4">
+                Ihr Stil, Unsere Leidenschaft
             </h1>
-            <p class="text-xl md:text-2xl mb-8 font-light max-w-2xl mx-auto animate-fade-in">
-                Entdecken Sie bei Friseur Eleganz die Kunst des Haarschnitts, der Farbe und des Stylings, die Ihre natürliche Schönheit unterstreicht.
+            <p class="text-xl md:text-2xl mb-8">
+                Erleben Sie meisterhafte Haarschnitte, brillante Farben und ein Styling, das Ihre Persönlichkeit unterstreicht.
             </p>
-            <a href="#kontakt" class="bg-yellow-700 hover:bg-yellow-800 text-white font-bold py-4 px-10 rounded-full text-xl uppercase tracking-wide shadow-lg transition duration-300 transform hover:scale-105 animate-fade-in-delay">
-                Termin Buchen
+            <a href="#kontakt" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                Jetzt Termin buchen
             </a>
         </div>
     </section>
 
-    <!-- Key Information Section -->
-    <section class="bg-white py-16 px-6" id="information">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Ihre Zufriedenheit ist unser Antrieb</h2>
-            <div class="section-separator"></div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-                <!-- Rating -->
-                <div class="bg-gray-100 p-8 rounded-xl shadow-md flex flex-col items-center justify-center transform hover:scale-105 transition duration-300">
-                    <div class="flex items-center mb-4 text-yellow-500">
-                        <i class="fas fa-star text-4xl mr-2"></i>
-                        <span class="text-5xl font-bold">4.4</span>
-                    </div>
-                    <p class="text-xl text-gray-600 font-semibold mb-2">Gesamtwertung</p>
-                    <p class="text-md text-gray-500">(aus 45 Bewertungen)</p>
-                </div>
-
-                <!-- Phone Number -->
-                <div class="bg-gray-100 p-8 rounded-xl shadow-md flex flex-col items-center justify-center transform hover:scale-105 transition duration-300">
-                    <i class="fas fa-phone-alt text-4xl text-yellow-700 mb-4"></i>
-                    <p class="text-xl text-gray-600 font-semibold mb-2">Telefon</p>
-                    <a href="tel:068120271258" class="text-2xl font-bold text-gray-900 hover:text-yellow-700 transition duration-300">
-                        0681 20271258
-                    </a>
-                </div>
-
-                <!-- Address -->
-                <div class="bg-gray-100 p-8 rounded-xl shadow-md flex flex-col items-center justify-center transform hover:scale-105 transition duration-300">
-                    <i class="fas fa-map-marker-alt text-4xl text-yellow-700 mb-4"></i>
-                    <p class="text-xl text-gray-600 font-semibold mb-2">Adresse</p>
-                    <a href="https://maps.google.com/?q=Stadtpl.+37,+3400+Klosterneuburg,+Austria" target="_blank" rel="noopener noreferrer" class="text-2xl font-bold text-gray-900 hover:text-yellow-700 transition duration-300 text-center">
-                        Stadtpl. 37, <br>3400 Klosterneuburg, Austria
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="bg-gray-50 py-16 px-6" id="leistungen">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Unsere Leistungen</h2>
-            <div class="section-separator"></div>
-
+    <!-- Leistungen Section -->
+    <section id="leistungen" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Unsere Leistungen</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Service Card 1 -->
-                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-2 transition duration-300 flex flex-col items-center text-center">
-                    <i class="fas fa-cut text-5xl text-yellow-700 mb-6"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Haarschnitt & Styling</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Präzise Schnitte und individuelle Stylings, die Ihre Persönlichkeit perfekt unterstreichen – für Damen, Herren und Kinder.
+                <!-- Leistung 1 -->
+                <div class="bg-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300 ease-in-out">
+                    <div class="text-indigo-600 mb-4 text-5xl">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Professionelle Haarschnitte</h3>
+                    <p class="text-gray-600">
+                        Ob klassisch oder modern, wir finden den perfekten Schnitt für Sie. Für Damen, Herren und Kinder.
                     </p>
                 </div>
-
-                <!-- Service Card 2 -->
-                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-2 transition duration-300 flex flex-col items-center text-center">
-                    <i class="fas fa-palette text-5xl text-yellow-700 mb-6"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Färben & Strähnen</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Von klassischen Farben bis zu modernen Techniken wie Balayage und Ombré – wir zaubern einzigartige Farbergebnisse.
+                <!-- Leistung 2 -->
+                <div class="bg-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300 ease-in-out">
+                    <div class="text-indigo-600 mb-4 text-5xl">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Brillante Farbtechniken</h3>
+                    <p class="text-gray-600">
+                        Von Strähnchen über Balayage bis zur Komplettfärbung – lassen Sie Ihre Haare strahlen.
                     </p>
                 </div>
-
-                <!-- Service Card 3 -->
-                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-2 transition duration-300 flex flex-col items-center text-center">
-                    <i class="fas fa-user-tie text-5xl text-yellow-700 mb-6"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Bartpflege</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Professionelle Bartpflege für den modernen Mann, inklusive Schneiden, Trimmen und Styling für einen gepflegten Look.
+                <!-- Leistung 3 -->
+                <div class="bg-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300 ease-in-out">
+                    <div class="text-indigo-600 mb-4 text-5xl">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Individuelle Stylings</h3>
+                    <p class="text-gray-600">
+                        Für jeden Anlass das passende Styling – von Hochsteckfrisuren bis zu glamourösen Wellen.
                     </p>
                 </div>
-
-                <!-- Service Card 4 -->
-                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-2 transition duration-300 flex flex-col items-center text-center">
-                    <i class="fas fa-brush text-5xl text-yellow-700 mb-6"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Hochsteckfrisuren</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Für besondere Anlässe kreieren wir elegante Hochsteckfrisuren, die Ihren großen Tag unvergesslich machen.
+                <!-- Leistung 4 -->
+                <div class="bg-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300 ease-in-out">
+                    <div class="text-indigo-600 mb-4 text-5xl">
+                        <i class="fas fa-beard"></i> <!-- Font Awesome 6 icon for beard -->
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Bartpflege & Rasur</h3>
+                    <p class="text-gray-600">
+                        Professionelle Bartpflege und traditionelle Rasur für den gepflegten Mann.
                     </p>
                 </div>
-
-                <!-- Service Card 5 -->
-                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-2 transition duration-300 flex flex-col items-center text-center">
-                    <i class="fas fa-spa text-5xl text-yellow-700 mb-6"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Haarpflege & Treatments</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Intensive Pflegebehandlungen, die Ihr Haar revitalisieren und ihm neuen Glanz und Geschmeidigkeit verleihen.
+                <!-- Leistung 5 -->
+                <div class="bg-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300 ease-in-out">
+                    <div class="text-indigo-600 mb-4 text-5xl">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Haarpflege & Kuren</h3>
+                    <p class="text-gray-600">
+                        Tiefenwirksame Pflegebehandlungen für gesundes, glänzendes Haar.
                     </p>
                 </div>
-
-                <!-- Service Card 6 -->
-                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-2 transition duration-300 flex flex-col items-center text-center">
-                    <i class="fas fa-child text-5xl text-yellow-700 mb-6"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Kinderhaarschnitte</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Geduldige und kindgerechte Haarschnitte, damit auch die Kleinsten strahlend und zufrieden unseren Salon verlassen.
+                <!-- Leistung 6 -->
+                <div class="bg-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300 ease-in-out">
+                    <div class="text-indigo-600 mb-4 text-5xl">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Kinderhaarschnitte</h3>
+                    <p class="text-gray-600">
+                        Geduldige und kindgerechte Haarschnitte für die Kleinsten.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="bg-white py-16 px-6" id="kontakt">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Kontaktieren Sie uns</h2>
-            <div class="section-separator"></div>
+    <!-- Business Info / About Section (Integrating Rating & Reviews) -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-6">Warum Friseur Eleganz?</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Wir legen Wert auf höchste Qualität, persönliche Beratung und ein entspanntes Ambiente, in dem Sie sich wohlfühlen können. Ihre Zufriedenheit ist unser Antrieb.
+            </p>
+            <div class="flex items-center justify-center mb-8">
+                <span class="text-yellow-500 text-3xl mr-2">
+                    <i class="fas fa-star"></i>
+                </span>
+                <span class="text-4xl font-bold text-gray-900 mr-2">4.4</span>
+                <span class="text-gray-600 text-xl">(45 Bewertungen)</span>
+            </div>
+            <p class="text-lg text-gray-700">
+                Sehen Sie selbst, warum unsere Kunden uns lieben!
+            </p>
+        </div>
+    </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <!-- Contact Info -->
-                <div class="bg-gray-100 p-8 rounded-xl shadow-md text-gray-700">
-                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Wir freuen uns auf Sie!</h3>
-                    <p class="mb-6 text-lg">
-                        Vereinbaren Sie noch heute Ihren persönlichen Termin bei Friseur Eleganz. Wir beraten Sie gerne und finden den perfekten Look für Sie.
-                    </p>
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-phone-alt text-2xl text-yellow-700 mr-4"></i>
-                        <a href="tel:068120271258" class="text-xl text-gray-800 hover:text-yellow-700 transition duration-300">0681 20271258</a>
-                    </div>
-                    <div class="flex items-start mb-4">
-                        <i class="fas fa-map-marker-alt text-2xl text-yellow-700 mr-4 flex-shrink-0 mt-1"></i>
-                        <a href="https://maps.google.com/?q=Stadtpl.+37,+3400+Klosterneuburg,+Austria" target="_blank" rel="noopener noreferrer" class="text-xl text-gray-800 hover:text-yellow-700 transition duration-300">
-                            Stadtpl. 37, <br>3400 Klosterneuburg, Austria
-                        </a>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-clock text-2xl text-yellow-700 mr-4"></i>
-                        <div>
-                            <p class="text-xl text-gray-800">Mo - Fr: 9:00 - 18:00 Uhr</p>
-                            <p class="text-xl text-gray-800">Sa: 9:00 - 14:00 Uhr</p>
+    <!-- Kontakt Section -->
+    <section id="kontakt" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Kontakt & Öffnungszeiten</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Details & Opening Hours -->
+                <div class="bg-white rounded-lg shadow-xl p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6">Finden Sie uns</h3>
+
+                        <div class="mb-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2 flex items-center"><i class="fas fa-map-marker-alt text-indigo-600 mr-3"></i> Unsere Adresse</h4>
+                            <p class="text-gray-600 text-lg ml-8">Stadtpl. 37, 3400 Klosterneuburg, Austria</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Stadtpl.+37,+3400+Klosterneuburg,+Austria" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline text-md ml-8">
+                                Auf Google Maps ansehen
+                                <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                            </a>
+                        </div>
+
+                        <div class="mb-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2 flex items-center"><i class="fas fa-phone-alt text-indigo-600 mr-3"></i> Telefon</h4>
+                            <a href="tel:068120271258" class="text-indigo-600 hover:underline text-lg ml-8">0681 20271258</a>
                         </div>
                     </div>
+                    <!-- Opening Hours -->
+                    <div>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3 flex items-center"><i class="fas fa-clock text-indigo-600 mr-3"></i> Öffnungszeiten</h4>
+                        <ul class="text-gray-700 text-lg ml-8">
+                            <li class="flex justify-between py-1 border-b border-gray-200 last:border-b-0">
+                                <span>Montag:</span> <span>9:00 AM – 6:00 PM</span>
+                            </li>
+                            <li class="flex justify-between py-1 border-b border-gray-200 last:border-b-0">
+                                <span>Dienstag:</span> <span>9:00 AM – 6:00 PM</span>
+                            </li>
+                            <li class="flex justify-between py-1 border-b border-gray-200 last:border-b-0">
+                                <span>Mittwoch:</span> <span>9:00 AM – 6:00 PM</span>
+                            </li>
+                            <li class="flex justify-between py-1 border-b border-gray-200 last:border-b-0">
+                                <span>Donnerstag:</span> <span>9:00 AM – 6:00 PM</span>
+                            </li>
+                            <li class="flex justify-between py-1 border-b border-gray-200 last:border-b-0">
+                                <span>Freitag:</span> <span>9:00 AM – 6:00 PM</span>
+                            </li>
+                            <li class="flex justify-between py-1 border-b border-gray-200 last:border-b-0">
+                                <span>Samstag:</span> <span>9:00 AM – 5:00 PM</span>
+                            </li>
+                            <li class="flex justify-between py-1">
+                                <span>Sonntag:</span> <span class="text-red-600">Geschlossen</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
-                <!-- Google Map Placeholder -->
-                <div class="w-full h-80 bg-gray-200 rounded-xl shadow-md overflow-hidden">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2656.703273874312!2d16.319527376672327!3d48.3075677712869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476df74f7d45c613%3A0x6a1c8f1f7d24a9a4!2sStadtpl.%2037%2C%203400%20Klosterneuburg%2C%20Austria!5e0!3m2!1sen!2sat!4v1701389080075!5m2!1sen!2sat"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                <!-- Contact Form -->
+                <div class="bg-white rounded-lg shadow-xl p-8">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Senden Sie uns eine Nachricht</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-lg font-medium text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out" placeholder="Ihr Name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-lg font-medium text-gray-700 mb-2">E-Mail</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out" placeholder="Ihre E-Mail-Adresse" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-lg font-medium text-gray-700 mb-2">Nachricht</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out" placeholder="Ihre Nachricht an uns" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                            Nachricht senden
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-10 px-6">
-        <div class="container mx-auto text-center">
-            <p class="mb-4">&copy; 2023 Friseur Eleganz. Alle Rechte vorbehalten.</p>
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4">
+                &copy; 2023 Friseur Eleganz. Alle Rechte vorbehalten.
+            </p>
             <div class="flex justify-center space-x-6">
-                <a href="#" class="text-gray-400 hover:text-yellow-700 transition duration-300">Impressum</a>
-                <a href="#" class="text-gray-400 hover:text-yellow-700 transition duration-300">Datenschutz</a>
+                <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-white transition duration-300 ease-in-out">
+                    <i class="fab fa-facebook-f text-xl"></i>
+                </a>
+                <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white transition duration-300 ease-in-out">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-white transition duration-300 ease-in-out">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
             </div>
         </div>
     </footer>
 
-    <!-- Simple JS for smooth scrolling and mobile menu -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                    mobileMenu.classList.toggle('flex');
-                });
-
-                // Close mobile menu when a link is clicked
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                            mobileMenu.classList.remove('flex');
-                        }
-                    });
-                });
-            }
-        });
-    </script>
 </body>
 </html>
 ```
