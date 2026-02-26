@@ -1,0 +1,241 @@
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haus & Hof Friseur Reithmayer - Ihr Salon in Klosterneuburg</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Optional: Google Fonts for a modern aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-gray-50">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="#" class="text-2xl font-bold text-gray-900">
+                Haus & Hof <span class="text-indigo-600">Friseur Reithmayer</span>
+            </a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#hero" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Start</a></li>
+                    <li><a href="#leistungen" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Leistungen</a></li>
+                    <li><a href="#kontakt" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Kontakt</a></li>
+                    <li><a href="tel:06764869619" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">Termin vereinbaren</a></li>
+                </ul>
+            </nav>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative bg-cover bg-center h-screen flex items-center justify-center text-white" style="background-image: url('https://images.unsplash.com/photo-1543764491-38500222165e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto text-center relative z-10 px-4">
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4">
+                Haus & Hof Friseur Reithmayer
+            </h1>
+            <p class="text-xl md:text-2xl mb-8">
+                Ihr Salon für Stil, Wohlbefinden & perfekte Haarschnitte in Klosterneuburg
+            </p>
+            <a href="tel:06764869619" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-block">
+                Jetzt Termin vereinbaren
+            </a>
+            <div class="mt-8 flex items-center justify-center text-white bg-black bg-opacity-30 rounded-lg p-3 inline-flex">
+                <span class="text-yellow-400 text-2xl mr-2">★★★★★</span>
+                <span class="font-semibold text-xl">4.9</span>
+                <span class="ml-2 text-lg">(298 Bewertungen)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leistungen Section -->
+    <section id="leistungen" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Unsere Leistungen</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-indigo-600">
+                    <div class="text-indigo-600 mb-4 flex justify-center">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 text-center mb-4">Haarschnitte & Styling</h3>
+                    <p class="text-gray-600 text-center">Moderne Schnitte, klassische Looks und trendiges Styling für Damen, Herren und Kinder.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-indigo-600">
+                    <div class="text-indigo-600 mb-4 flex justify-center">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343h.01M17 7.343h.01"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 text-center mb-4">Farben & Strähnen</h3>
+                    <p class="text-gray-600 text-center">Individuelle Farbberatung, schonende Färbungen und brillante Strähnentechniken.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-indigo-600">
+                    <div class="text-indigo-600 mb-4 flex justify-center">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 text-center mb-4">Intensive Pflege</h3>
+                    <p class="text-gray-600 text-center">Spezielle Haarkuren und Behandlungen für gesundes, glänzendes Haar.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-indigo-600">
+                    <div class="text-indigo-600 mb-4 flex justify-center">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.003 12.003 0 002.928 12c0 3.057 1.127 5.867 3.042 8A12.003 12.003 0 0012 21.072c3.057 0 5.867-1.127 8-3.042 1.915-2.133 3.042-4.943 3.042-8a12.003 12.003 0 00-3.042-8.618z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 text-center mb-4">Bartpflege & Rasur</h3>
+                    <p class="text-gray-600 text-center">Professionelle Bartpflege, Formen und klassische Nassrasuren für den Herrn.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-indigo-600">
+                    <div class="text-indigo-600 mb-4 flex justify-center">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 text-center mb-4">Hochsteckfrisuren</h3>
+                    <p class="text-gray-600 text-center">Elegante Hochsteckfrisuren für besondere Anlässe wie Hochzeiten und Events.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-indigo-600">
+                    <div class="text-indigo-600 mb-4 flex justify-center">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9.247a8.5 8.5 0 00-7.513 12.217l1.166-.786c.928-.625 2.05-.98 3.23-.98h.83c1.18 0 2.302.355 3.23.98l1.166.786a8.5 8.5 0 00-7.513-12.217zM11 15c0-1.105.895-2 2-2s2 .895 2 2v2H11v-2z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 text-center mb-4">Typberatung</h3>
+                    <p class="text-gray-600 text-center">Individuelle Beratung für Ihren perfekten Look, abgestimmt auf Ihren Typ.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Info / Why Choose Us -->
+    <section class="py-16 bg-indigo-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Warum Haus & Hof Friseur Reithmayer?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="p-6 bg-white rounded-lg shadow-md border-b-4 border-indigo-400">
+                    <div class="text-indigo-600 mb-4 text-5xl">✓</div>
+                    <h3 class="text-xl font-semibold mb-2">Expertise & Erfahrung</h3>
+                    <p class="text-gray-600">Langjährige Erfahrung für perfekte Ergebnisse.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border-b-4 border-indigo-400">
+                    <div class="text-indigo-600 mb-4 text-5xl">✨</div>
+                    <h3 class="text-xl font-semibold mb-2">Modernste Techniken</h3>
+                    <p class="text-gray-600">Immer auf dem neuesten Stand der Friseurkunst.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border-b-4 border-indigo-400">
+                    <div class="text-indigo-600 mb-4 text-5xl">💖</div>
+                    <h3 class="text-xl font-semibold mb-2">Persönliche Beratung</h3>
+                    <p class="text-gray-600">Wir nehmen uns Zeit für Ihre Wünsche.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border-b-4 border-indigo-400">
+                    <div class="text-indigo-600 mb-4 text-5xl">🌿</div>
+                    <h3 class="text-xl font-semibold mb-2">Hochwertige Produkte</h3>
+                    <p class="text-gray-600">Nur das Beste für Ihr Haar.</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <p class="text-lg text-gray-700">Unser Geschäftstyp: <span class="font-semibold text-indigo-700">Friseursalon, Gesundheit & Schönheit</span></p>
+                <p class="text-sm text-gray-500">(Business Type: establishment, hair_care, health, point_of_interest)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Kontakt & Öffnungszeiten</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact Details -->
+                <div class="bg-white p-8 rounded-lg shadow-xl border-t-4 border-indigo-600">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Besuchen Sie uns</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-lg text-gray-700 mb-2 font-semibold">Adresse:</p>
+                            <p class="text-xl text-gray-800">Niedermarkt 13/2, 3400 Klosterneuburg, Austria</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Haus+&amp;+Hof+Friseur+Reithmayer+Niedermarkt+13%2F2,+3400+Klosterneuburg,+Austria" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline text-lg mt-2 inline-block">Auf Google Maps anzeigen</a>
+                        </div>
+                        <div>
+                            <p class="text-lg text-gray-700 mb-2 font-semibold">Telefon:</p>
+                            <a href="tel:06764869619" class="text-indigo-600 hover:underline text-2xl font-bold">0676 4869619</a>
+                        </div>
+                        <div>
+                            <p class="text-lg text-gray-700 mb-2 font-semibold">Bewertung:</p>
+                            <div class="flex items-center">
+                                <span class="text-yellow-400 text-3xl mr-2">★★★★★</span>
+                                <span class="font-bold text-2xl text-gray-900">4.9</span>
+                                <span class="ml-2 text-xl text-gray-700">(298 Bewertungen)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="tel:06764869619" class="w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition duration-300 transform hover:scale-105 inline-block">
+                            Jetzt anrufen & Termin vereinbaren
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Opening Hours -->
+                <div class="bg-white p-8 rounded-lg shadow-xl border-t-4 border-indigo-600">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Unsere Öffnungszeiten</h3>
+                    <div class="text-lg">
+                        <dl class="space-y-3">
+                            <div class="flex justify-between pb-2 border-b border-gray-200">
+                                <dt class="font-medium text-gray-700">Montag:</dt>
+                                <dd class="text-gray-800">7:00 AM – 7:00 PM</dd>
+                            </div>
+                            <div class="flex justify-between pb-2 border-b border-gray-200">
+                                <dt class="font-medium text-gray-700">Dienstag:</dt>
+                                <dd class="text-gray-800">7:00 AM – 7:00 PM</dd>
+                            </div>
+                            <div class="flex justify-between pb-2 border-b border-gray-200">
+                                <dt class="font-medium text-gray-700">Mittwoch:</dt>
+                                <dd class="text-gray-800">8:00 AM – 6:00 PM</dd>
+                            </div>
+                            <div class="flex justify-between pb-2 border-b border-gray-200">
+                                <dt class="font-medium text-gray-700">Donnerstag:</dt>
+                                <dd class="text-gray-800">7:00 AM – 7:00 PM</dd>
+                            </div>
+                            <div class="flex justify-between pb-2 border-b border-gray-200">
+                                <dt class="font-medium text-gray-700">Freitag:</dt>
+                                <dd class="text-gray-800">7:00 AM – 7:00 PM</dd>
+                            </div>
+                            <div class="flex justify-between pb-2 border-b border-gray-200">
+                                <dt class="font-medium text-gray-700">Samstag:</dt>
+                                <dd class="text-red-600 font-semibold">Geschlossen</dd>
+                            </div>
+                            <div class="flex justify-between">
+                                <dt class="font-medium text-gray-700">Sonntag:</dt>
+                                <dd class="text-red-600 font-semibold">Geschlossen</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2023 Haus & Hof Friseur Reithmayer. Alle Rechte vorbehalten.</p>
+            <p class="mt-2 text-gray-400">Niedermarkt 13/2, 3400 Klosterneuburg, Austria</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+```
