@@ -1,0 +1,175 @@
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fari Barbershop | Dein Stil, Deine Schere.</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%231f2937' d='M20 10V6c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v4c0 1.1-.9 2-2 2v2c0 1.1.9 2 2 2h2v4c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-4h2c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2zM6 6h12v4H6V6zm14 6H4v-2h16v2z'%3E%3C/path%3E%3C/svg%3E" type="image/svg+xml">
+    <style>
+        /* Optional: Custom fonts for a modern touch, if not using a pre-configured Tailwind setup */
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+        .star-filled {
+            color: #fbbf24; /* Tailwind yellow-400 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900 tracking-tight">Fari Barbershop</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-gray-600 hover:text-gray-900 transition duration-300">Startseite</a>
+                <a href="#leistungen" class="text-gray-600 hover:text-gray-900 transition duration-300">Leistungen</a>
+                <a href="#kontakt" class="text-gray-600 hover:text-gray-900 transition duration-300">Kontakt</a>
+            </nav>
+            <a href="tel:06781244132" class="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition duration-300 hidden sm:block">
+                Jetzt Anrufen
+            </a>
+            <div class="md:hidden">
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative bg-gray-900 text-white py-20 md:py-32 overflow-hidden">
+        <!-- Background Image/Overlay -->
+        <div class="absolute inset-0 z-0 opacity-40" style="background-image: url('https://images.unsplash.com/photo-1594922756294-f2038743128b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-position: center; background-size: cover;"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+                Fari Barbershop: Dein Stil. Deine Schere.
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-90">
+                Meisterhafte Schnitte und professionelle Pflege in Klosterneuburg.
+            </p>
+
+            <!-- Rating and Reviews integrated here -->
+            <div class="flex items-center justify-center mb-10 space-x-2">
+                <div class="flex text-yellow-400 text-2xl">
+                    <span class="star-filled">&#9733;</span>
+                    <span class="star-filled">&#9733;</span>
+                    <span class="star-filled">&#9733;</span>
+                    <span class="star-filled">&#9733;</span>
+                    <span class="star-filled">&#9733;</span>
+                </div>
+                <span class="text-lg font-semibold">(5.0) basierend auf 76 Bewertungen</span>
+            </div>
+
+            <a href="#kontakt" class="inline-block bg-gray-800 text-white text-lg font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-105">
+                Jetzt Termin vereinbaren
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="leistungen" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">Unsere Leistungen</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Klassischer Haarschnitt</h3>
+                    <p class="text-gray-700">Präziser Schnitt nach Ihren Wünschen, inklusive Waschen und Styling.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Bartpflege & Trimmen</h3>
+                    <p class="text-gray-700">Professionelle Bartrasur und -pflege für den gepflegten Mann.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Haarwäsche & Kopfmassage</h3>
+                    <p class="text-gray-700">Entspannende Haarwäsche mit revitalisierender Kopfmassage.</p>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Kinderhaarschnitt</h3>
+                    <p class="text-gray-700">Geduldige und kindgerechte Haarschnitte für die Kleinen.</p>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Grauhaarabdeckung</h3>
+                    <p class="text-gray-700">Diskrete und natürliche Abdeckung grauer Haare.</p>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Gesichtspflege für Männer</h3>
+                    <p class="text-gray-700">Erfrischende Gesichtsbehandlung für eine gesunde Haut.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">Kontakt & Anfahrt</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Contact Info -->
+                <div class="text-center md:text-left">
+                    <p class="text-lg md:text-xl text-gray-700 mb-4">Wir freuen uns auf Ihren Besuch!</p>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Telefon</h3>
+                        <a href="tel:06781244132" class="text-gray-700 hover:text-gray-900 text-xl md:text-2xl transition duration-300">0678 1244132</a>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Adresse</h3>
+                        <address class="not-italic text-gray-700 text-lg md:text-xl">
+                            Leopoldstraße 19/1<br>
+                            3400 Klosterneuburg, Austria
+                        </address>
+                        <a href="https://maps.app.goo.gl/wM2oD954g5W15X3y7" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-blue-600 hover:text-blue-800 transition duration-300">
+                            Auf Google Maps ansehen
+                            <svg class="inline-block w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                    <!-- Optional: Opening Hours -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Öffnungszeiten</h3>
+                        <ul class="text-gray-700 text-lg">
+                            <li>Montag - Freitag: 9:00 - 18:00 Uhr</li>
+                            <li>Samstag: 9:00 - 14:00 Uhr</li>
+                            <li>Sonntag: Geschlossen</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Google Maps Embed -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden h-96 w-full">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2639.261271616796!2d16.32623351582239!3d48.30732387923485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476df022ee9b6267%3A0x6436696b997e008!2sLeopoldstra%C3%9Fe%2019%2F1%2C%203400%20Klosterneuburg%2C%20Austria!5e0!3m2!1sen!2sat!4v1701388800000!5m2!1sen!2sat"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2023 Fari Barbershop. Alle Rechte vorbehalten.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#hero" class="text-gray-400 hover:text-white transition duration-300">Startseite</a>
+                <a href="#leistungen" class="text-gray-400 hover:text-white transition duration-300">Leistungen</a>
+                <a href="#kontakt" class="text-gray-400 hover:text-white transition duration-300">Kontakt</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+```
