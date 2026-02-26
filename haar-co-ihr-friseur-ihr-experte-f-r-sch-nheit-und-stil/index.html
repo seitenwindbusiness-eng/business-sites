@@ -1,0 +1,218 @@
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haar & Co Ihr Friseur - Ihr Experte für Schönheit und Stil</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%25%22 y=%2250%25%22 style=%22dominant-baseline:central;text-anchor:middle;font-size:90px;%22>💇‍♀️</text></svg>" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-background {
+            background-image: url('https://images.unsplash.com/photo-1598463162383-7d5a57896409?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Placeholder Image */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900 h-10 flex items-center">
+                <span class="text-indigo-600">Haar & Co</span> Ihr Friseur
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#leistungen" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Leistungen</a>
+                <a href="#kontakt" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Kontakt</a>
+                <a href="tel:0224335127" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300">
+                    <svg class="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l1.3 9.133a1 1 0 01-.282.854l-1.636 1.636c-1.127 1.127-1.127 2.973 0 4.1s2.973 1.127 4.1 0l1.636-1.636a1 1 0 01.854-.282l9.133 1.3c.433.063.836.43.836.986V17a1 1 0 01-1 1h-2.153a1 1 0 01-.986-.836l-1.3-9.133a1 1 0 01.282-.854l1.636-1.636c1.127-1.127 1.127-2.973 0-4.1s-2.973-1.127-4.1 0L5.05 4.95a1 1 0 01-.854.282l-9.133-1.3A1 1 0 012 3z"></path></svg>
+                    Termin anrufen
+                </a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger) - You'd add JS for functionality -->
+            <button class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md p-2">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-background relative min-h-[600px] flex items-center justify-center text-white text-center py-20 px-4">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight drop-shadow-lg">
+                Ihr Friseur in Klosterneuburg für den perfekten Look
+            </h1>
+            <p class="text-lg md:text-xl mb-8 opacity-90 drop-shadow-md">
+                Modernste Techniken, individuelle Beratung und Leidenschaft für Ihr Haar.
+            </p>
+            
+            <!-- Rating and Reviews -->
+            <div class="flex items-center justify-center mb-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-lg py-3 px-6 mx-auto w-fit shadow-lg">
+                <div class="flex text-yellow-400 mr-2 text-xl">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" /></svg>
+                </div>
+                <span class="text-white text-lg font-semibold mr-1">4.7</span> 
+                <span class="text-gray-200 text-base">(36 Bewertungen)</span>
+            </div>
+
+            <a href="#kontakt" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-xl">
+                Jetzt Termin vereinbaren
+            </a>
+        </div>
+    </section>
+
+    <!-- Leistungen Section -->
+    <section id="leistungen" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Unsere Leistungen</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-indigo-600 mb-4 text-5xl">
+                        <span role="img" aria-label="Haarschnitt">✂️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Professionelle Haarschnitte</h3>
+                    <p class="text-gray-700">Ob klassisch, modern oder trendig – wir finden den Schnitt, der perfekt zu Ihnen passt.</p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-indigo-600 mb-4 text-5xl">
+                        <span role="img" aria-label="Färben">🌈</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Farb- und Strähnentechniken</h3>
+                    <p class="text-gray-700">Von natürlichen Highlights bis zu mutigen Farbveränderungen – wir bringen Farbe in Ihr Leben.</p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-indigo-600 mb-4 text-5xl">
+                        <span role="img" aria-label="Styling">✨</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Individuelle Stylings</h3>
+                    <p class="text-gray-700">Für den Alltag, besondere Anlässe oder Ihre Hochzeit – wir kreieren Ihr Wunschstyling.</p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-indigo-600 mb-4 text-5xl">
+                        <span role="img" aria-label="Haarpflege">🧴</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Intensive Haarpflege</h3>
+                    <p class="text-gray-700">Gönnen Sie Ihrem Haar eine Auszeit mit unseren pflegenden Behandlungen und Kuren.</p>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-indigo-600 mb-4 text-5xl">
+                        <span role="img" aria-label="Bartpflege">🧔</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Bartpflege & Trimmen</h3>
+                    <p class="text-gray-700">Für den gepflegten Mann bieten wir professionelle Bartpflege und Stylings.</p>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-indigo-600 mb-4 text-5xl">
+                        <span role="img" aria-label="Beratung">🗣️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Typgerechte Beratung</h3>
+                    <p class="text-gray-700">Wir beraten Sie ausführlich, um Ihren individuellen Stil zu unterstreichen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Besuchen Sie Uns</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Contact Info -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Kontakt & Öffnungszeiten</h3>
+                    
+                    <div class="mb-6">
+                        <p class="text-gray-700 font-semibold mb-2 flex items-center">
+                            <svg class="h-6 w-6 text-indigo-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            Adresse:
+                        </p>
+                        <address class="not-italic text-gray-800 text-lg ml-9">
+                            Hauptstraße 1<br>
+                            3400 Klosterneuburg, Austria
+                        </address>
+                    </div>
+
+                    <div class="mb-6">
+                        <p class="text-gray-700 font-semibold mb-2 flex items-center">
+                            <svg class="h-6 w-6 text-indigo-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.876 1.255H9.5a1 1 0 01-1-1v-1a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1h2.83c.772 0 1.542.427 1.954 1.144l.872 1.517c.563.974.162 2.185-.756 2.665l-2.001 1.05a.75.75 0 00-.363.63L7.75 19H5a2 2 0 01-2-2v-2a2 2 0 012-2h.25v-.5A2.25 2.25 0 003 10.75V7.5a2.25 2.25 0 012.25-2.25h1.5A2.25 2.25 0 009 3.25h2a2.25 2.25 0 012.25 2.25v2.75a2.25 2.25 0 00-.25 1.5v2.25a2.25 2.25 0 00.25 1.5v2.75A2.25 2.25 0 0113.25 19h-1.5a2.25 2.25 0 00-2.25 2.25v.5a.75.75 0 00.363.63l2.001 1.05c.918.48 1.319 1.691.756 2.665l-.872 1.517c-.412.717-1.182 1.144-1.954 1.144H5a1 1 0 01-1-1v-1a1 1 0 00-1-1H3V7a2 2 0 012-2z"></path></svg>
+                            Telefon:
+                        </p>
+                        <a href="tel:0224335127" class="text-indigo-600 hover:text-indigo-800 text-lg font-medium ml-9 block">
+                            02243 35127
+                        </a>
+                    </div>
+
+                    <div class="mb-6">
+                        <p class="text-gray-700 font-semibold mb-2 flex items-center">
+                            <svg class="h-6 w-6 text-indigo-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Öffnungszeiten:
+                        </p>
+                        <ul class="text-gray-800 text-lg ml-9 list-disc pl-5">
+                            <li>Montag: Geschlossen</li>
+                            <li>Di - Fr: 9:00 - 18:00 Uhr</li>
+                            <li>Samstag: 9:00 - 14:00 Uhr</li>
+                        </ul>
+                    </div>
+
+                    <a href="tel:0224335127" class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md transition duration-300 transform hover:scale-105 shadow-md">
+                        Jetzt anrufen und Termin buchen
+                    </a>
+                </div>
+
+                <!-- Map (Iframe for Google Maps) -->
+                <div class="rounded-lg overflow-hidden shadow-lg h-[400px] md:h-full">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2639.231945415494!2d16.326269576403914!3d48.30902897126131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d093b7f19890f%3A0x6d90a1f0d4a94511!2sHauptstra%C3%9Fe%201%2C%203400%20Klosterneuburg%2C%20Austria!5e0!3m2!1sen!2sat!4v1700412328222!5m2!1sen!2sat" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2023 Haar & Co Ihr Friseur. Alle Rechte vorbehalten.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <!-- Placeholder for social media links -->
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Facebook</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+```
