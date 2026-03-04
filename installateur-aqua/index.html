@@ -1,0 +1,281 @@
+=<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installateur Aqua: Ihr Experte für Sanitär, Heizung & Bad in Wien</title>
+    <meta name="description" content="Installateur Aqua – Ihr zuverlässiger Partner für Heizung, Sanitär, Badsanierung und 24/7 Notdienst in Wien. Schnell, kompetent und immer für Sie da.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300796B' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'%3E%3C/path%3E%3C/svg%3E" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aqua-main': '#00796B', // Dark teal
+                        'aqua-light': '#4DB6AC', // Light teal
+                        'aqua-accent': '#FFC107', // Gold for highlights/stars
+                        'aqua-bg': '#E0F2F1', // Very light teal background
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // Or a system font
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hero-background {
+            background-image: url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=ATCDNfXNZy81aDU6m0z-fG9-5AwYVH6qksN76LOxlBJKYvVGtoY3LX9iDygGCtb7t7_W0VTyVkhDdvX2Lda1z0TKQ1TqCMHWMCFPPJ6MTBsUoTvdLhR04tvNmvPSVbEaci0BsuD2OcrI_h2x8TXAsvc9y-JZfK-CmrHFgw3PCE_S83ccnsMTBUDMnQcEVPkCqGKscREN7TEn1R7fDx3__N6QGozuVnGVIrVoxPwCOqENoqYJDgSndzKwJFVaAneY3JZwstcj3d7zHYwYSfkpRDywCy6YUjslu5oniitygTqoLrrfeKJwm74wIDgQUK_L9CRNIkqQOVpUG4i87I_jGGkUfJ3lR8jpnmmSleBhLGuKm4fSn5_CxiO7IqvPFZhwsWil4y_6dP4XCa3_fTiqSn03GRDoBBNws9zyyD2tQ9m9Vx2QAP_iZ5eghHuIsrTYlg&key=AIzaSyC96xPvKmlEn-_82qHJFi6cGzXi4vzrqIE');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-aqua-main">Installateur Aqua</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#leistungen" class="text-gray-700 hover:text-aqua-main font-medium">Leistungen</a></li>
+                    <li><a href="#bewertungen" class="text-gray-700 hover:text-aqua-main font-medium">Bewertungen</a></li>
+                    <li><a href="#kontakt" class="text-gray-700 hover:text-aqua-main font-medium">Kontakt</a></li>
+                </ul>
+            </nav>
+            <a href="tel:066499501072" class="bg-aqua-main text-white px-6 py-2 rounded-full hover:bg-aqua-light transition duration-300 shadow-lg">
+                <svg class="w-5 h-5 inline-block mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                Jetzt anrufen
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-background relative h-screen flex items-center justify-center text-center">
+        <div class="absolute inset-0 bg-aqua-main opacity-80"></div>
+        <div class="relative z-10 text-white p-8 max-w-4xl">
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                Ihr Installateur in Wien: <br><span class="text-aqua-light">Aqua bringt's ins Lot!</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 font-light drop-shadow-md">
+                Schnelle Hilfe bei Notfällen, professionelle Installationen und moderne Badsanierungen. <br>24/7 für Sie erreichbar.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:066499501072" class="bg-aqua-accent text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-yellow-400 transition duration-300 shadow-xl transform hover:scale-105">
+                    <svg class="w-6 h-6 inline-block mr-2 -mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                    24/7 Notruf: 0664 99501072
+                </a>
+                <a href="#kontakt" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-aqua-main transition duration-300 shadow-xl transform hover:scale-105">
+                    Kostenloses Angebot anfordern
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust / About Section -->
+    <section class="bg-aqua-bg py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-aqua-main mb-12">Ihre Zufriedenheit ist unser Antrieb</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-aqua-accent mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                        <span class="text-3xl font-bold text-gray-900">4.9</span>
+                        <span class="text-lg text-gray-600 ml-2">/ 5.0</span>
+                    </div>
+                    <p class="text-lg font-semibold text-gray-700">Aus 87 Bewertungen</p>
+                    <p class="text-sm text-gray-500">Ihre Zufriedenheit ist unsere beste Empfehlung!</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-aqua-main mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                        <h3 class="text-2xl font-bold text-gray-900">Standort</h3>
+                    </div>
+                    <p class="text-lg font-semibold text-gray-700">Gumpendorfer Str. 41</p>
+                    <p class="text-lg font-semibold text-gray-700">1060 Wien, Austria</p>
+                    <a href="https://maps.app.goo.gl/YOUR_GOOGLE_MAPS_LINK" target="_blank" class="text-aqua-light hover:underline mt-2 inline-block">Auf Google Maps anzeigen</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-aqua-main mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l3 3a1 1 0 001.414-1.414L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                        <h3 class="text-2xl font-bold text-gray-900">Öffnungszeiten</h3>
+                    </div>
+                    <p class="text-lg font-semibold text-gray-700">24 Stunden Service</p>
+                    <ul class="text-sm text-gray-600 mt-2 list-none p-0">
+                        <li>Montag: 24 Stunden geöffnet</li>
+                        <li>Dienstag: 24 Stunden geöffnet</li>
+                        <li>Mittwoch: 24 Stunden geöffnet</li>
+                        <li>Donnerstag: 24 Stunden geöffnet</li>
+                        <li>Freitag: 24 Stunden geöffnet</li>
+                        <li>Samstag: 24 Stunden geöffnet</li>
+                        <li>Sonntag: 24 Stunden geöffnet</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="leistungen" class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-aqua-main mb-6">Unsere Leistungen</h2>
+            <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+                Vom tropfenden Wasserhahn bis zur kompletten Badsanierung – wir sind Ihr zuverlässiger Partner für alle Anliegen rund um Heizung und Sanitär.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-aqua-bg p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center">
+                    <svg class="w-16 h-16 text-aqua-main mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    <h3 class="text-2xl font-semibold text-aqua-main mb-3">Heizungsinstallation & Wartung</h3>
+                    <p class="text-gray-700">Professionelle Installation, Reparatur und regelmäßige Wartung Ihrer Heizsysteme für optimale Effizienz und Wärme.</p>
+                </div>
+                <div class="bg-aqua-bg p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center">
+                    <svg class="w-16 h-16 text-aqua-main mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 00-9.95 9h-2.05L12 24l11.95-13h-2.05A10 10 0 0012 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    <h3 class="text-2xl font-semibold text-aqua-main mb-3">Sanitärinstallationen</h3>
+                    <p class="text-gray-700">Von der Wasserleitung bis zum Abfluss – wir kümmern uns um alle Sanitäranlagen in Bad und Küche.</p>
+                </div>
+                <div class="bg-aqua-bg p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center">
+                    <svg class="w-16 h-16 text-aqua-main mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-6h2v6zm4 0h-2v-6h2v6zM12 9c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    <h3 class="text-2xl font-semibold text-aqua-main mb-3">Badsanierung & Planung</h3>
+                    <p class="text-gray-700">Wir planen und realisieren Ihr Traumbad – von der ersten Idee bis zur schlüsselfertigen Übergabe.</p>
+                </div>
+                <div class="bg-aqua-bg p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center">
+                    <svg class="w-16 h-16 text-aqua-main mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.12.68 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+                    <h3 class="text-2xl font-semibold text-aqua-main mb-3">Rohrbruch & Leckortung</h3>
+                    <p class="text-gray-700">Schnelle und präzise Ortung von Lecks und Rohbrüchen zur Vermeidung größerer Schäden.</p>
+                </div>
+                <div class="bg-aqua-bg p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center">
+                    <svg class="w-16 h-16 text-aqua-main mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4v4h4V4H12zm2 14c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm2.14-9c.17-1.07.26-2.18.26-3.3 0-3.93-3.07-7-7-7s-7 3.07-7 7c0 1.12.09 2.23.26 3.3L2 16h20l-3.86-7z"/></svg>
+                    <h3 class="text-2xl font-semibold text-aqua-main mb-3">Wartungsarbeiten</h3>
+                    <p class="text-gray-700">Regelmäßige Inspektion und Wartung Ihrer Anlagen für eine lange Lebensdauer und störungsfreien Betrieb.</p>
+                </div>
+                <div class="bg-aqua-bg p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center">
+                    <svg class="w-16 h-16 text-aqua-main mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-.9 15H11v-4.18c-1.16-.16-2.3-.49-3.41-.98-.63-.29-1.2-.66-1.74-1.09L5.5 13.91l-1.41-1.41L11 4.58V17zm4.9-2.73c-1.16-.16-2.3-.49-3.41-.98-.63-.29-1.2-.66-1.74-1.09L15.5 13.91l1.41-1.41L13 4.58V17h.1z"/></svg>
+                    <h3 class="text-2xl font-semibold text-aqua-main mb-3">24/7 Notdienst</h3>
+                    <p class="text-gray-700">Bei akuten Problemen wie Wasserrohrbruch oder Heizungsausfall sind wir rund um die Uhr für Sie da!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="bewertungen" class="py-20 bg-aqua-bg">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-aqua-main mb-6">Was unsere Kunden sagen</h2>
+            <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+                Echte Meinungen von zufriedenen Kunden – Ihre Zufriedenheit ist unser größtes Lob.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-aqua-accent mr-3">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <h4 class="font-semibold text-lg text-gray-800">Anna S.</h4>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed flex-grow">"Super schnelle Reaktion und Problembehebung! Herr Müller war äußerst kompetent und freundlich. Unsere Heizung läuft wieder einwandfrei. Absolut empfehlenswert!"</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-aqua-accent mr-3">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <h4 class="font-semibold text-lg text-gray-800">Familie Meier</h4>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed flex-grow">"Die Badsanierung wurde professionell und termingerecht durchgeführt. Das Ergebnis übertrifft unsere Erwartungen. Saubere Arbeit und tolle Beratung von Anfang bis Ende."</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-aqua-accent mr-3">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <h4 class="font-semibold text-lg text-gray-800">Max K.</h4>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed flex-grow">"24-Stunden-Notdienst hat uns aus der Patsche geholfen! Mitten in der Nacht kam ein Techniker und hat den Rohrbruch schnell behoben. Vielen Dank für den hervorragenden Service!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-aqua-main mb-6">Kontaktieren Sie uns</h2>
+            <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+                Wir sind für Sie da – rund um die Uhr. Zögern Sie nicht, uns bei Fragen oder Notfällen zu kontaktieren.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto items-center">
+                <div class="bg-aqua-bg p-8 rounded-lg shadow-lg flex flex-col justify-center items-center text-center h-full">
+                    <svg class="w-16 h-16 text-aqua-main mb-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                    <h3 class="text-2xl font-bold text-aqua-main mb-3">Rufen Sie uns an</h3>
+                    <a href="tel:066499501072" class="text-3xl font-extrabold text-gray-900 hover:text-aqua-light transition duration-300">0664 99501072</a>
+                    <p class="text-gray-600 mt-2">Für sofortige Hilfe oder eine Terminvereinbarung.</p>
+                </div>
+
+                <div class="bg-aqua-bg p-8 rounded-lg shadow-lg flex flex-col justify-center items-center text-center h-full">
+                    <svg class="w-16 h-16 text-aqua-main mb-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.76-1.39A6.002 6.002 0 002 15a2 2 0 01-3-1.664zM12 7a1 1 0 100-2 1 1 0 000 2zm-4 0a1 1 0 100-2 1 1 0 000 2zm-2 4a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                    <h3 class="text-2xl font-bold text-aqua-main mb-3">Schreiben Sie uns</h3>
+                    <p class="text-lg font-semibold text-gray-900 mb-2">info@installateuraqua.at</p>
+                    <p class="text-gray-600">Wir antworten schnellstmöglich auf Ihre Anfragen.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center max-w-xl mx-auto">
+                <h3 class="text-2xl font-bold text-aqua-main mb-4">Besuchen Sie uns</h3>
+                <p class="text-lg text-gray-700">Gumpendorfer Str. 41, 1060 Wien, Austria</p>
+                <a href="https://maps.app.goo.gl/YOUR_GOOGLE_MAPS_LINK" target="_blank" class="mt-4 inline-block bg-aqua-main text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-aqua-light transition duration-300 shadow-md">
+                    <svg class="w-5 h-5 inline-block mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                    Route planen
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4 text-lg font-bold">Installateur Aqua</p>
+            <div class="flex flex-col md:flex-row justify-center items-center md:space-x-8 space-y-2 md:space-y-0 text-gray-300 mb-4">
+                <a href="tel:066499501072" class="hover:text-aqua-light transition-colors duration-300">
+                    <svg class="w-4 h-4 inline-block mr-1 -mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                    0664 99501072
+                </a>
+                <span class="hidden md:inline-block">|</span>
+                <a href="mailto:info@installateuraqua.at" class="hover:text-aqua-light transition-colors duration-300">
+                    <svg class="w-4 h-4 inline-block mr-1 -mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                    info@installateuraqua.at
+                </a>
+                <span class="hidden md:inline-block">|</span>
+                <span class="hover:text-aqua-light transition-colors duration-300">
+                    <svg class="w-4 h-4 inline-block mr-1 -mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                    Gumpendorfer Str. 41, 1060 Wien, Austria
+                </span>
+            </div>
+            <p class="text-gray-400">&copy; 2023 Installateur Aqua. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
