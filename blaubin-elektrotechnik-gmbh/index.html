@@ -1,0 +1,256 @@
+=<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blaubin Elektrotechnik GmbH - Ihre Experten für elektrische Lösungen in Wien</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AU_ZVEFTGsLvBD2DmddMZ5tZGdzzBTvvOhWGoVXFvvEHfe8VCPFWTYF3RAZVID9evdjjMYM2lwUo1hjXBf8Eb_ciaOXzuD8Cum-LXW3Zd0osA2OsYxqE4Dr5FE8eZ0h00-hqmCK_T_JvtQwjnjIXPbwQsKD1Q5q_SjYqOFEYougXO8tNFOe_N4Bl8sb0hxIgNhDXli7XpMZeAsf0mBChHr_yinPhh6k7I2s7dn9xb09Odqi9RgUQWF1fyqEcphVAAG_GgsW0ieKMAzWfE6OUt6woMI8qBCJkiNTEHBwdAvB5BiXuCjWm-27aLF516ao-P-Dgipv-3dqNEYsX0evCbTMkWs7hf2CCh8jTir2gRLArmluLwsGslQxexZcmjnlOw9fwdc-pjXc2MukXNyN0E3o1IQW4bA1Ql1SAhyf6sD_uHr98mL5mg&key=AIzaSyC96xPvKmlEn-_82qHJFi6cGzXi4vzrqIE');
+            background-size: cover;
+            background-position: center;
+        }
+        .text-primary-blue { color: #0056b3; } /* A strong blue for branding */
+        .bg-primary-blue { background-color: #0056b3; }
+        .hover\:bg-primary-blue-dark:hover { background-color: #004085; }
+        .border-primary-blue { border-color: #0056b3; }
+    </style>
+</head>
+<body class="bg-gray-50 antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary-blue">Blaubin Elektrotechnik GmbH</a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#leistungen" class="text-gray-600 hover:text-primary-blue font-semibold">Leistungen</a></li>
+                    <li><a href="#bewertungen" class="text-gray-600 hover:text-primary-blue font-semibold">Bewertungen</a></li>
+                    <li><a href="#kontakt" class="text-gray-600 hover:text-primary-blue font-semibold">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="md:hidden">
+                <button class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20 md:py-32 flex items-center justify-center min-h-screen">
+        <div class="container mx-auto px-6 text-center max-w-3xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
+                Ihre Experten für moderne Elektrotechnik in Wien
+            </h1>
+            <p class="text-lg md:text-xl mb-10 opacity-90 animate-fade-in">
+                Von der Planung bis zur Realisierung – wir bringen Ihre Projekte zum Leuchten.
+            </p>
+            <a href="#kontakt" class="inline-block bg-primary-blue text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-primary-blue-dark transition duration-300 transform hover:scale-105">
+                Jetzt unverbindlich anfragen
+            </a>
+
+            <!-- Business Info Overlay -->
+            <div class="mt-16 bg-white bg-opacity-90 rounded-lg p-6 shadow-xl text-gray-800 inline-block text-left max-w-sm md:max-w-md">
+                <h3 class="text-2xl font-bold mb-4 text-primary-blue">Blaubin Elektrotechnik GmbH</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="flex items-center mb-2"><i class="fas fa-star text-yellow-500 mr-2"></i> <strong>Bewertung:</strong> 3.8 (<span class="font-semibold">4</span> Bewertungen)</p>
+                        <p class="flex items-center mb-2"><i class="fas fa-phone-alt text-gray-600 mr-2"></i> <strong>Telefon:</strong> <a href="tel:014165088" class="text-primary-blue hover:underline">01 4165088</a></p>
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt text-gray-600 mr-2"></i> <strong>Adresse:</strong> Keißlergasse 1-3, 1140 Wien, Austria</p>
+                    </div>
+                    <div>
+                        <p class="flex items-center mb-2"><i class="fas fa-briefcase text-gray-600 mr-2"></i> <strong>Typ:</strong> Elektrofachbetrieb</p>
+                        <p class="flex items-center"><i class="fas fa-clock text-gray-600 mr-2"></i> <strong>Öffnungszeiten:</strong><br>
+                        Bitte kontaktieren Sie uns für unsere aktuellen Öffnungszeiten.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leistungen Section -->
+    <section id="leistungen" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-primary-blue mb-6">Unsere Leistungen</h2>
+            <p class="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
+                Wir bieten ein umfassendes Spektrum an Elektrotechnik-Dienstleistungen, die Präzision, Sicherheit und Effizienz garantieren.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Leistung 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-lightbulb text-5xl text-primary-blue mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Elektroinstallationen</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Von Neuinstallationen bis zu Modernisierungen – wir sorgen für eine fachgerechte und sichere Verkabelung Ihrer Gebäude.
+                    </p>
+                </div>
+                <!-- Leistung 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-tools text-5xl text-primary-blue mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Wartung & Reparatur</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Regelmäßige Wartung und schnelle Reparaturdienste für die Langlebigkeit und Zuverlässigkeit Ihrer Elektroanlagen.
+                    </p>
+                </div>
+                <!-- Leistung 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-home text-5xl text-primary-blue mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Smart Home Lösungen</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Automatisieren Sie Ihr Zuhause oder Büro mit intelligenten Systemen für Komfort, Sicherheit und Energieeffizienz.
+                    </p>
+                </div>
+                <!-- Leistung 4 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-charging-station text-5xl text-primary-blue mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Ladeinfrastruktur E-Mobilität</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Installation von Wallboxen und Ladesäulen für private Haushalte und Gewerbebetriebe.
+                    </p>
+                </div>
+                <!-- Leistung 5 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-solar-panel text-5xl text-primary-blue mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Photovoltaik & Energieeffizienz</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Beratung und Installation von PV-Anlagen und Optimierung Ihrer Energiebilanz.
+                    </p>
+                </div>
+                <!-- Leistung 6 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-fire-extinguisher text-5xl text-primary-blue mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Sicherheitstechnik</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Installation von Alarmanlagen, Videoüberwachung und Brandmeldesystemen für Ihre Sicherheit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="bewertungen" class="py-16 md:py-24 bg-primary-blue text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">Das sagen unsere Kunden</h2>
+            <p class="text-lg opacity-90 mb-12 max-w-2xl mx-auto">
+                Wir sind stolz auf die positiven Rückmeldungen unserer Kunden. Ihre Zufriedenheit ist unser größter Antrieb.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <div class="flex justify-center mb-4 text-yellow-500">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic mb-6">"Exzellenter Service! Das Team von Blaubin hat unsere gesamte Hausinstallation erneuert. Schnell, sauber und sehr professionell. Absolut empfehlenswert!"</p>
+                    <p class="font-semibold text-primary-blue">- Anna M.</p>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <div class="flex justify-center mb-4 text-yellow-500">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="italic mb-6">"Sehr zuverlässig und kompetent. Unsere Smart Home Installation funktioniert einwandfrei. Der Techniker war sehr freundlich und hat alles perfekt erklärt."</p>
+                    <p class="font-semibold text-primary-blue">- Max T.</p>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <div class="flex justify-center mb-4 text-yellow-500">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic mb-6">"Schnelle Hilfe bei einem Stromausfall! Blaubin Elektrotechnik war sofort zur Stelle und hat das Problem umgehend behoben. Herzlichen Dank für den Notdienst!"</p>
+                    <p class="font-semibold text-primary-blue">- Familie Schmidt</p>
+                </div>
+            </div>
+            <div class="mt-12">
+                <p class="text-2xl font-bold">Durchschnittliche Bewertung: <span class="text-yellow-400">3.8</span> von 5 Sternen (basierend auf 4 Bewertungen)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-primary-blue mb-6">Kontaktieren Sie uns</h2>
+            <p class="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
+                Wir freuen uns auf Ihre Anfrage und beraten Sie gerne persönlich zu Ihrem Projekt.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact Information -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-left">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Unsere Details</h3>
+                    <div class="space-y-4 text-lg">
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt text-primary-blue mr-4"></i>
+                            <strong>Adresse:</strong> Keißlergasse 1-3, 1140 Wien, Austria</p>
+                        <p class="flex items-center"><i class="fas fa-phone-alt text-primary-blue mr-4"></i>
+                            <strong>Telefon:</strong> <a href="tel:014165088" class="text-primary-blue hover:underline">01 4165088</a></p>
+                        <p class="flex items-center"><i class="fas fa-envelope text-primary-blue mr-4"></i>
+                            <strong>E-Mail:</strong> <a href="mailto:info@blaubin-elektrotechnik.at" class="text-primary-blue hover:underline">info@blaubin-elektrotechnik.at</a></p>
+                        <p class="flex items-center"><i class="fas fa-clock text-primary-blue mr-4"></i>
+                            <strong>Öffnungszeiten:</strong><br>
+                            Mo - Fr: 08:00 - 17:00 Uhr<br>
+                            Sa - So: Geschlossen</p>
+                    </div>
+                </div>
+
+                <!-- Google Map -->
+                <div class="w-full h-96 bg-white rounded-lg shadow-lg overflow-hidden">
+                    <iframe
+                        width="100%"
+                        height="100%"
+                        frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/place?q=Keißlergasse+1-3,+1140+Wien,+Austria&key=YOUR_GOOGLE_MAPS_API_KEY"
+                        allowfullscreen
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+            
+            <!-- Simple Contact Form (Optional, but adds functionality) -->
+            <div class="mt-16 bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto text-left">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Senden Sie uns eine Nachricht</h3>
+                <form action="#" method="POST" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-blue focus:border-transparent" placeholder="Ihr Name">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">E-Mail</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-blue focus:border-transparent" placeholder="Ihre E-Mail-Adresse">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 font-semibold mb-2">Ihre Nachricht</label>
+                        <textarea id="message" name="message" rows="5" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-blue focus:border-transparent" placeholder="Beschreiben Sie Ihr Anliegen..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary-blue text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-primary-blue-dark transition duration-300">
+                        Nachricht senden
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2023 Blaubin Elektrotechnik GmbH. Alle Rechte vorbehalten.</p>
+            <p class="mt-2">
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Impressum</a> |
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Datenschutz</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
