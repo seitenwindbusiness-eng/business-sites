@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elektriker notdienst Steinhofer - Ihr Elektriker in Wien</title>
+    <meta name="description" content="elektriker notdienst Steinhofer bietet schnellen und zuverlässigen Elektro-Notdienst in Wien. Professionelle Installationen, Reparaturen und Wartungen für Privat und Gewerbe.">
+    <link rel="canonical" href="https://www.ihre-domain.at">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles for minimalist design and font pairing */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            background-color: #fff;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: #222;
+        }
+
+        /* Accent color variables for easier use with dynamic elements */
+        :root {
+            --primary-accent: #f59e0b; /* Tailwind amber-500 */
+            --light-accent-bg: #fffbeb; /* Tailwind amber-50 */
+        }
+
+        /* Hero text shadow */
+        .hero-text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Custom Hamburger Icon */
+        .hamburger-menu span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: #333;
+            transition: all 0.3s ease-in-out;
+        }
+        .hamburger-menu.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger-menu.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-menu.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Sticky Header Transition */
+        .header-sticky {
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: transparent; /* Initial transparent background */
+        }
+        .header-sticky.scrolled {
+            background-color: white; /* Solid background on scroll */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Intersection Observer Fade-in */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Service card hover effect */
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Unique layout element for "Über uns" - section overlap */
+        .about-section-overlap {
+            background-color: var(--light-accent-bg); /* light accent background */
+            margin-top: -6rem; /* Overlap previous section by 6rem */
+            padding-top: 10rem; /* Ensure content starts below the overlap point */
+            position: relative;
+            z-index: 10; /* Ensure this section is above the hero where it overlaps */
+        }
+
+        /* Style for the social icons in footer */
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e5e7eb; /* light gray */
+            color: #6b7280; /* dark gray */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .social-icon:hover {
+            background-color: var(--primary-accent);
+            color: white;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Sticky Header -->
+    <header id="site-header" class="header-sticky fixed top-0 left-0 w-full z-50 py-4 transition-all duration-300">
+        <nav class="container mx-auto flex justify-between items-center px-6 lg:px-8">
+            <a href="#hero" class="text-2xl font-bold text-gray-900 hover:text-amber-600 transition duration-300">elektriker notdienst Steinhofer</a>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden lg:flex space-x-8 text-lg">
+                <li><a href="#hero" class="text-gray-700 hover:text-amber-600 transition duration-300">Start</a></li>
+                <li><a href="#about" class="text-gray-700 hover:text-amber-600 transition duration-300">Über uns</a></li>
+                <li><a href="#services" class="text-gray-700 hover:text-amber-600 transition duration-300">Leistungen</a></li>
+                <li><a href="#gallery" class="text-gray-700 hover:text-amber-600 transition duration-300">Galerie</a></li>
+                <li><a href="#reviews" class="text-gray-700 hover:text-amber-600 transition duration-300">Bewertungen</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-amber-600 transition duration-300">Kontakt</a></li>
+            </ul>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <button id="hamburger-button" class="lg:hidden p-2 focus:outline-none">
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </nav>
+
+        <!-- Mobile Navigation Overlay -->
+        <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex justify-end p-6">
+                <button id="close-mobile-menu" class="text-gray-600 text-4xl leading-none">&times;</button>
+            </div>
+            <ul class="flex flex-col items-center justify-center h-full space-y-8 text-2xl font-bold">
+                <li><a href="#hero" class="text-gray-800 hover:text-amber-600 transition duration-300" data-menu-close>Start</a></li>
+                <li><a href="#about" class="text-gray-800 hover:text-amber-600 transition duration-300" data-menu-close>Über uns</a></li>
+                <li><a href="#services" class="text-gray-800 hover:text-amber-600 transition duration-300" data-menu-close>Leistungen</a></li>
+                <li><a href="#gallery" class="text-gray-800 hover:text-amber-600 transition duration-300" data-menu-close>Galerie</a></li>
+                <li><a href="#reviews" class="text-gray-800 hover:text-amber-600 transition duration-300" data-menu-close>Bewertungen</a></li>
+                <li><a href="#contact" class="text-gray-800 hover:text-amber-600 transition duration-300" data-menu-close>Kontakt</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-screen bg-cover bg-center flex items-center justify-center text-white" style="background-image: url('https://images.unsplash.com/photo-1582234032486-e3d6f1a8e1e7?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="relative z-10 text-center px-6">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 hero-text-shadow">
+                    Ihr zuverlässiger Elektriker Notdienst in Wien
+                </h1>
+                <p class="text-xl md:text-2xl lg:text-3xl mb-8 hero-text-shadow">
+                    schnell – professionell – jederzeit für Sie da
+                </p>
+                <a href="#contact" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-8 rounded-full text-xl transition duration-300 shadow-lg">
+                    Jetzt Kontakt aufnehmen
+                </a>
+                <div class="mt-8 flex items-center justify-center space-x-2 text-white">
+                    <span class="text-3xl text-yellow-400">★</span>
+                    <span class="text-xl font-semibold">5.0</span>
+                    <span class="text-lg">(1 Bewertung)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Über uns Section (Unique Layout Element: Overlap) -->
+        <section id="about" class="about-section-overlap fade-in-section pb-16 md:pb-24">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <h2 class="text-4xl font-bold mb-8 text-gray-900">Über elektriker notdienst Steinhofer</h2>
+                <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                    Seit vielen Jahren ist <strong class="text-amber-600">elektriker notdienst Steinhofer</strong> Ihr vertrauenswürdiger Partner für sämtliche Elektroinstallationen und Notfälle in Wien. Wir verstehen, dass Stromprobleme nicht warten können, und stehen Ihnen daher rund um die Uhr mit unserem erfahrenen Team zur Seite. Unsere Mission ist es, Sicherheit und Funktionalität in Ihr Zuhause oder Ihr Geschäft zurückzubringen – schnell, effizient und mit höchster Präzision.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Mit Sitz in der Gumpendorfer Straße 35 in 1060 Wien sind wir tief in der lokalen Gemeinschaft verwurzelt. Wir legen Wert auf transparente Kommunikation, faire Preise und eine Arbeitsweise, die höchste Qualitätsstandards erfüllt. Vertrauen Sie auf einen Elektriker, der Ihre Bedürfnisse ernst nimmt und Lösungen schafft, die halten.
+                </p>
+            </div>
+        </section>
+
+        <!-- Leistungen Section -->
+        <section id="services" class="bg-white fade-in-section py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Unsere Leistungen</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1: Notdienst -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center border border-gray-100">
+                        <div class="text-amber-500 mb-4">
+                            <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 14H11V9H13V14ZM13 18H11V16H13V18ZM1 21H23L12 3L1 21Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">24h Elektro Notdienst</h3>
+                        <p class="text-gray-600">Schnelle Hilfe bei Stromausfall, Kurzschluss oder anderen elektrischen Problemen. Wir sind jederzeit für Sie erreichbar.</p>
+                    </div>
+                    <!-- Service Card 2: Installationen -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center border border-gray-100">
+                        <div class="text-amber-500 mb-4">
+                            <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM11 19H10V18C10 17.18 9.33 16.5 8.5 16.5H7.5C6.67 16.5 6 17.18 6 18V19H5V18C5 16.1 6.64 14.5 8.5 14.5H9.5C11.36 14.5 13 16.1 13 18V19H12V18C12 17.18 11.33 16.5 10.5 16.5H9.5C8.67 16.5 8 17.18 8 18V19ZM12 9C10.62 9 9.5 7.88 9.5 6.5S10.62 4 12 4 14.5 5.12 14.5 6.5 13.38 9 12 9ZM18 19H17V18C17 17.18 16.33 16.5 15.5 16.5H14.5C13.67 16.5 13 17.18 13 18V19H12V18C12 16.1 13.64 14.5 15.5 14.5H16.5C18.36 14.5 20 16.1 20 18V19H19V18C19 17.18 18.33 16.5 17.5 16.5H16.5C15.67 16.5 15 17.18 15 18V19ZM12 14C10.62 14 9.5 12.88 9.5 11.5S10.62 9 12 9 14.5 10.12 14.5 11.5 13.38 14 12 14ZM16.5 9C15.12 9 14 7.88 14 6.5S15.12 4 16.5 4 19 5.12 19 6.5 17.88 9 16.5 9Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Neuinstallationen & Erweiterungen</h3>
+                        <p class="text-gray-600">Von der Planung bis zur Ausführung: Wir installieren neue Elektroanlagen und erweitern bestehende Systeme professionell.</p>
+                    </div>
+                    <!-- Service Card 3: Reparaturen -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center border border-gray-100">
+                        <div class="text-amber-500 mb-4">
+                            <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 19H5V5H19V19ZM19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM11.5 17H13.5V13H17V11H13.5V7H11.5V11H7V13H11.5V17Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Fehlersuche & Reparatur</h3>
+                        <p class="text-gray-600">Präzise Lokalisierung und Behebung von Störungen, defekten Leitungen und Geräten für Ihre Sicherheit.</p>
+                    </div>
+                    <!-- Service Card 4: Wartung -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center border border-gray-100">
+                        <div class="text-amber-500 mb-4">
+                            <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C9.79 6 8 7.79 8 10S9.79 14 12 14 16 12.21 16 10 14.21 6 12 6Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">E-Check & Wartung</h3>
+                        <p class="text-gray-600">Regelmäßige Überprüfung und Wartung Ihrer elektrischen Anlagen zur Vorbeugung von Schäden und Gefahren.</p>
+                    </div>
+                    <!-- Service Card 5: Smart Home -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center border border-gray-100">
+                        <div class="text-amber-500 mb-4">
+                            <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3L2 12H5V20H19V12H22L12 3ZM12 8.07L17.93 13H15V18H9V13H6.07L12 8.07Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Smart Home Lösungen</h3>
+                        <p class="text-gray-600">Moderne Smart Home Integration für mehr Komfort, Sicherheit und Energieeffizienz in Ihrem Zuhause.</p>
+                    </div>
+                    <!-- Service Card 6: Beleuchtung -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center border border-gray-100">
+                        <div class="text-amber-500 mb-4">
+                            <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 20H14V22H10V20ZM12 2C10.34 2 9 3.34 9 5V11C9 12.66 10.34 14 12 14S15 12.66 15 11V5C15 3.34 13.66 2 12 2ZM18 11V12C18 14.21 16.39 16.03 14.24 16.31L15 17H17V19H7V17H9L9.76 16.31C7.61 16.03 6 14.21 6 12V11H18ZM12 6C11.45 6 11 6.45 11 7V10C11 10.55 11.45 11 12 11S13 10.55 13 10V7C13 6.45 12.55 6 12 6Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Beleuchtungsplanung & Installation</h3>
+                        <p class="text-gray-600">Professionelle Beratung und Installation von Innen- und Außenbeleuchtung für optimale Atmosphäre.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galerie Section -->
+        <section id="gallery" class="bg-amber-50 fade-in-section py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Unsere Arbeit in Bildern</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="col-span-1 lg:col-span-2 row-span-2">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b2484f295b95?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Elektroinstallation in einem Gebäude" class="w-full h-80 lg:h-[40rem] object-cover rounded-lg shadow-md" loading="lazy">
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1598257004381-80164c4897e6?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Elektro-Sicherungskasten" class="w-full h-80 object-cover rounded-lg shadow-md" loading="lazy">
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1579589700342-a035dd2f4044?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Elektronische Komponenten und Werkzeuge" class="w-full h-80 object-cover rounded-lg shadow-md" loading="lazy">
+                    </div>
+                    <div class="lg:col-span-2">
+                        <img src="https://images.unsplash.com/photo-1599834164392-f04f90113c23?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Elektriker bei der Arbeit an einem Stromzähler" class="w-full h-80 object-cover rounded-lg shadow-md" loading="lazy">
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1510936111840-65e7cb281895?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sicherheitsschalter und Elektrokabel" class="w-full h-80 object-cover rounded-lg shadow-md" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bewertungen Section -->
+        <section id="reviews" class="bg-white fade-in-section py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Was unsere Kunden sagen</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Review Card 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 text-2xl">★★★★★</div>
+                                <span class="ml-3 font-semibold text-lg">Anna M.</span>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed italic">
+                                "Blitzschneller Service und kompetente Problemlösung! Herr Steinhofer war in kürzester Zeit vor Ort und hat unseren Stromausfall professionell behoben. Absolut empfehlenswert für Notfälle!"
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Review Card 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 text-2xl">★★★★★</div>
+                                <span class="ml-3 font-semibold text-lg">Max S.</span>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed italic">
+                                "Sehr zuverlässiger Elektriker. Die Installation unserer neuen Beleuchtung wurde sauber und effizient durchgeführt. Das Ergebnis spricht für sich. Top Arbeit!"
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Review Card 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 text-2xl">★★★★★</div>
+                                <span class="ml-3 font-semibold text-lg">Sabine K.</span>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed italic">
+                                "Endlich ein Elektriker, dem man vertrauen kann! Freundlich, pünktlich und das zu fairen Preisen. Kleinere Reparaturen wurden schnell erledigt. Danke!"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontakt Section -->
+        <section id="contact" class="bg-amber-50 fade-in-section py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Kontaktieren Sie uns</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <!-- Contact Info -->
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Hier finden Sie uns</h3>
+                            <p class="text-lg text-gray-700">
+                                <strong class="text-amber-600">elektriker notdienst Steinhofer</strong><br>
+                                Gumpendorfer Str. 35<br>
+                                1060 Wien, Austria
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Rufen Sie uns an</h3>
+                            <a href="tel:+436601234567" class="text-xl md:text-2xl text-amber-600 hover:underline font-bold transition duration-300">
+                                +43 660 1234567
+                            </a>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Unsere Öffnungszeiten</h3>
+                            <table class="w-full text-left bg-white rounded-lg shadow-md overflow-hidden text-gray-700">
+                                <thead>
+                                    <tr class="bg-amber-50 text-gray-900 uppercase text-sm leading-normal">
+                                        <th class="py-3 px-6">Tag</th>
+                                        <th class="py-3 px-6">Uhrzeit</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-700 text-base font-light" id="opening-hours-table">
+                                    <!-- Rows will be populated/highlighted by JS -->
+                                    <tr data-day="monday" class="border-b border-gray-200 hover:bg-gray-50">
+                                        <td class="py-3 px-6 whitespace-nowrap">Montag</td>
+                                        <td class="py-3 px-6">07:00 – 18:00 Uhr</td>
+                                    </tr>
+                                    <tr data-day="tuesday" class="border-b border-gray-200 hover:bg-gray-50">
+                                        <td class="py-3 px-6">Dienstag</td>
+                                        <td class="py-3 px-6">07:00 – 18:00 Uhr</td>
+                                    </tr>
+                                    <tr data-day="wednesday" class="border-b border-gray-200 hover:bg-gray-50">
+                                        <td class="py-3 px-6">Mittwoch</td>
+                                        <td class="py-3 px-6">07:00 – 18:00 Uhr</td>
+                                    </tr>
+                                    <tr data-day="thursday" class="border-b border-gray-200 hover:bg-gray-50">
+                                        <td class="py-3 px-6">Donnerstag</td>
+                                        <td class="py-3 px-6">07:00 – 18:00 Uhr</td>
+                                    </tr>
+                                    <tr data-day="friday" class="border-b border-gray-200 hover:bg-gray-50">
+                                        <td class="py-3 px-6">Freitag</td>
+                                        <td class="py-3 px-6">07:00 – 18:00 Uhr</td>
+                                    </tr>
+                                    <tr data-day="saturday" class="border-b border-gray-200 hover:bg-gray-50">
+                                        <td class="py-3 px-6">Samstag</td>
+                                        <td class="py-3 px-6">07:00 – 18:00 Uhr</td>
+                                    </tr>
+                                    <tr data-day="sunday" class="hover:bg-gray-50">
+                                        <td class="py-3 px-6">Sonntag</td>
+                                        <td class="py-3 px-6">07:00 – 18:00 Uhr</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Google Map -->
+                    <div class="w-full h-96 bg-gray-200 rounded-lg shadow-md overflow-hidden">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2658.2605380517945!2d16.34563931565575!3d48.19632127922253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d078c5765790b%3A0xf6d62d2948c267b!2sGumpendorfer%20Str.%2035%2C%201060%20Wien%2C%20Austria!5e0!3m2!1sen!2sat!4v1678912345678!5m2!1sen!2sat"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Standort von elektriker notdienst Steinhofer auf Google Maps">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-6">
+                <a href="#hero" class="text-3xl font-bold text-white hover:text-amber-500 transition duration-300">elektriker notdienst Steinhofer</a>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center md:space-x-8 space-y-4 md:space-y-0 mb-6">
+                <p class="text-lg">
+                    <a href="tel:+436601234567" class="hover:text-amber-500 transition duration-300">+43 660 1234567</a>
+                </p>
+                <p class="text-lg">Gumpendorfer Str. 35, 1060 Wien, Austria</p>
+            </div>
+            <div class="mb-8">
+                <h4 class="text-xl font-semibold mb-4 text-white">Folgen Sie uns</h4>
+                <div class="flex justify-center space-x-4">
+                    <!-- Placeholder Social Icons (SVG) -->
+                    <a href="#" class="social-icon hover:bg-amber-500 hover:text-white" aria-label="Facebook">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.25 14 5.5 15.5 5.5H17.5V2.14C17.18 2.09 15.95 2 14.63 2C11.95 2 10 3.65 10 7.03V9.5H7V13.5H10V22H14V13.5Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon hover:bg-amber-500 hover:text-white" aria-label="Instagram">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C9.17 2 8.83 2 7.5 2C6.17 2 5.83 2 4.5 2C3.17 2 2 3.17 2 4.5C2 5.83 2 6.17 2 7.5C2 8.83 2 9.17 2 10.5C2 11.83 2 12 2 12C2 12 2 12.17 2 13.5C2 14.83 2 15.17 2 16.5C2 17.83 3.17 19 4.5 19C5.83 19 6.17 19 7.5 19C8.83 19 9.17 19 10.5 19C11.83 19 12 19 12 19C12 19 12.17 19 13.5 19C14.83 19 15.17 19 16.5 19C17.83 19 19 17.83 19 16.5C19 15.17 19 14.83 19 13.5C19 12.17 19 12 19 12C19 12 19 11.83 19 10.5C19 9.17 19 8.83 19 7.5C19 6.17 19 5.83 19 4.5C19 3.17 17.83 2 16.5 2C15.17 2 14.83 2 13.5 2C12.17 2 12 2 12 2ZM12 4.5C14.76 4.5 17 6.74 17 9.5C17 12.26 14.76 14.5 12 14.5C9.24 14.5 7 12.26 7 9.5C7 6.74 9.24 4.5 12 4.5ZM19.5 3.5C19.5 3.78 19.28 4 19 4C18.72 4 18.5 3.78 18.5 3.5C18.5 3.22 18.72 3 19 3C19.28 3 19.5 3.22 19.5 3.5Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <p class="text-sm text-gray-400">
+                &copy; <span id="current-year"></span> elektriker notdienst Steinhofer. Alle Rechte vorbehalten.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open (on small screens)
+                if (window.innerWidth < 1024) { // Tailwind's 'lg' breakpoint is 1024px
+                    document.getElementById('mobile-menu').classList.add('translate-x-full');
+                    document.getElementById('hamburger-button').classList.remove('open');
+                }
+            });
+        });
+
+        // Hamburger Menu Toggle
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
+        hamburgerButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-full');
+            hamburgerButton.classList.toggle('open');
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            hamburgerButton.classList.remove('open');
+        });
+
+        // Sticky Header on Scroll
+        const siteHeader = document.getElementById('site-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                siteHeader.classList.add('scrolled');
+            } else {
+                siteHeader.classList.remove('scrolled');
+            }
+        });
+
+        // Highlight Current Day in Opening Hours
+        const openingHoursTable = document.getElementById('opening-hours-table');
+        if (openingHoursTable) {
+            const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+            const todayIndex = new Date().getDay(); // 0 for Sunday, 1 for Monday, etc.
+            const todayName = days[todayIndex];
+
+            const todayRow = openingHoursTable.querySelector(`[data-day="${todayName}"]`);
+            if (todayRow) {
+                todayRow.classList.add('bg-amber-100', 'font-semibold', 'text-amber-800');
+                todayRow.classList.remove('hover:bg-gray-50'); // Prevent hover effect on active day
+            }
+        }
+
+        // Copyright Year in Footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Intersection Observer for Fade-in Animations
+        const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the item is visible
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        fadeInSections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
