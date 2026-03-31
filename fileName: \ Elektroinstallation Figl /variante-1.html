@@ -1,0 +1,604 @@
+```html
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elektroinstallation Figl – Ihr Partner für Elektrotechnik in Wien</title>
+    <meta name="description" content="Elektroinstallation Figl bietet professionelle Elektroinstallationen, Smart Home Lösungen, Reparaturen und Wartung in Wien. Präzision, Sicherheit und höchste Qualität.">
+    <meta name="keywords" content="Elektriker Wien, Elektroinstallation, Smart Home, Reparatur Elektrik, Elektrotechnik, Figl Wien, Haidgasse 9">
+    <meta name="author" content="Elektroinstallation Figl">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-gold: #D4AF37; /* A slightly softer gold than pure yellow */
+            --light-bg-accent: #FFF8E1; /* Very light cream/yellow for sections */
+            --dark-text: #262626;
+            --light-text: #fdfdfd;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-text);
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-text);
+        }
+
+        .text-primary-gold { color: var(--primary-gold); }
+        .bg-primary-gold { background-color: var(--primary-gold); }
+        .hover\:bg-primary-gold:hover { background-color: var(--primary-gold); }
+        .border-primary-gold { border-color: var(--primary-gold); }
+        .bg-light-bg-accent { background-color: var(--light-bg-accent); }
+
+        .hero-title {
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+        }
+
+        .hero-subtitle {
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Sticky Header */
+        .header-sticky {
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Nav active link */
+        .nav-link-active {
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        /* Hamburger menu transition */
+        .hamburger-line {
+            transition: all 0.3s ease-in-out;
+        }
+        .hamburger-open .top-line {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger-open .middle-line {
+            opacity: 0;
+        }
+        .hamburger-open .bottom-line {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Custom scroll reveal for Intersection Observer */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Services Card Hover */
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Masonry-like grid for gallery */
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: minmax(200px, auto); /* Flexible row height */
+                gap: 1rem;
+            }
+            .gallery-grid-item:nth-child(even) { /* Example for varying heights */
+                grid-row: span 2; /* Make some items taller */
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="site-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/95 lg:bg-transparent lg:text-white lg:hover:bg-white/95 lg:hover:text-dark-text">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#hero" class="text-2xl font-bold font-playfair-display text-dark-text lg:text-white lg:hover:text-dark-text transition-colors duration-300">Elektro Figl</a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex space-x-8 text-lg font-medium">
+                <a href="#ueber-uns" class="nav-link hover:text-primary-gold transition-colors duration-300">Über Uns</a>
+                <a href="#leistungen" class="nav-link hover:text-primary-gold transition-colors duration-300">Leistungen</a>
+                <a href="#galerie" class="nav-link hover:text-primary-gold transition-colors duration-300">Galerie</a>
+                <a href="#bewertungen" class="nav-link hover:text-primary-gold transition-colors duration-300">Bewertungen</a>
+                <a href="#kontakt" class="nav-link hover:text-primary-gold transition-colors duration-300">Kontakt</a>
+            </nav>
+
+            <!-- Hamburger Icon for Mobile -->
+            <button id="hamburger-button" class="lg:hidden p-2 focus:outline-none z-50 relative">
+                <div class="w-6 h-0.5 bg-dark-text mb-1 top-line"></div>
+                <div class="w-6 h-0.5 bg-dark-text mb-1 middle-line"></div>
+                <div class="w-6 h-0.5 bg-dark-text bottom-line"></div>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-playfair-display">
+            <a href="#hero" class="mobile-nav-link text-dark-text hover:text-primary-gold transition-colors duration-300" onclick="document.getElementById('hamburger-button').click()">Start</a>
+            <a href="#ueber-uns" class="mobile-nav-link text-dark-text hover:text-primary-gold transition-colors duration-300" onclick="document.getElementById('hamburger-button').click()">Über Uns</a>
+            <a href="#leistungen" class="mobile-nav-link text-dark-text hover:text-primary-gold transition-colors duration-300" onclick="document.getElementById('hamburger-button').click()">Leistungen</a>
+            <a href="#galerie" class="mobile-nav-link text-dark-text hover:text-primary-gold transition-colors duration-300" onclick="document.getElementById('hamburger-button').click()">Galerie</a>
+            <a href="#bewertungen" class="mobile-nav-link text-dark-text hover:text-primary-gold transition-colors duration-300" onclick="document.getElementById('hamburger-button').click()">Bewertungen</a>
+            <a href="#kontakt" class="mobile-nav-link text-dark-text hover:text-primary-gold transition-colors duration-300" onclick="document.getElementById('hamburger-button').click()">Kontakt</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen bg-cover bg-center flex items-center justify-center text-center p-4" style="background-image: url('https://images.unsplash.com/photo-1587840134464-9f8f2b7b5c8f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="relative z-10 text-white flex flex-col items-center max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold font-playfair-display leading-tight mb-4 hero-title">
+                Elektroinstallation Figl:<br>Präzision. Sicherheit. Zukunft.
+            </h1>
+            <p class="text-lg md:text-xl mb-8 hero-subtitle">
+                Ihr zuverlässiger Partner für Elektrotechnik in Wien. Seit über zwei Jahrzehnten Ihr Experte für innovative Lösungen und höchste Qualität.
+            </p>
+            <a href="#kontakt" class="bg-primary-gold text-white text-lg font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-all duration-300 mb-6">
+                Jetzt kontaktieren
+            </a>
+            <div class="flex items-center space-x-2 text-white/90">
+                <span class="text-2xl text-yellow-400">★★★★☆</span>
+                <span class="text-lg">(4.1 von 7 Bewertungen)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Über Uns Section -->
+    <section id="ueber-uns" class="py-16 md:py-24 bg-light-bg-accent scroll-reveal">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl font-bold text-center mb-10 font-playfair-display">Über Uns</h2>
+            <div class="flex flex-col lg:flex-row items-center lg:space-x-12">
+                <div class="lg:w-1/2 mb-8 lg:mb-0">
+                    <img src="https://images.unsplash.com/photo-1542382436-e0e6c6c7b049?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Elektroinstallation Figl Team" class="rounded-lg shadow-xl object-cover w-full h-80 lg:h-96">
+                </div>
+                <div class="lg:w-1/2 text-lg leading-relaxed text-gray-700">
+                    <p class="mb-6">
+                        Seit unserer Gründung ist Elektroinstallation Figl Ihr vertrauenswürdiger Meisterbetrieb in Wien, wenn es um professionelle Elektrotechnik geht. Mit über zwei Jahrzehnten Erfahrung im Gepäck stehen wir für kompromisslose Qualität, höchste Sicherheitsstandards und innovative Lösungen.
+                    </p>
+                    <p class="mb-6">
+                        Unser erfahrenes Team aus qualifizierten Elektrikern widmet sich jeder Aufgabe mit größter Sorgfalt – von komplexen Neuinstallationen bis zu feinsten Reparaturen. Wir verstehen die Bedeutung einer zuverlässigen und sicheren Elektroinstallation für Ihr Zuhause oder Ihr Unternehmen.
+                    </p>
+                    <p>
+                        Bei Figl setzen wir auf modernste Techniken und nachhaltige Praktiken, um Ihnen nicht nur heute, sondern auch morgen einwandfreie Ergebnisse zu liefern. Ihr Vertrauen ist unser Antrieb, Ihre Zufriedenheit unser größtes Ziel.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leistungen Section -->
+    <section id="leistungen" class="py-16 md:py-24 bg-white scroll-reveal">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl font-bold text-center mb-12 font-playfair-display">Unsere Leistungen</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Leistung 1 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <svg class="w-16 h-16 text-primary-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 012 2v1h5.5c.75 0 1.48.2 2.12.58l.08.05a2 2 0 01.32 3.06L18 16m-4-4l-1 1M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2zm1-5h2m-2 0a1 1 0 000 2h2a1 1 0 000-2H6z"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-3 font-playfair-display">Neuinstallationen</h3>
+                    <p class="text-gray-600">
+                        Wir planen und realisieren moderne Elektroinstallationen für Neubauten, Umbauten und Sanierungen – maßgeschneidert und zukunftssicher.
+                    </p>
+                </div>
+                <!-- Leistung 2 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <svg class="w-16 h-16 text-primary-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-3 font-playfair-display">Reparaturen & Wartung</h3>
+                    <p class="text-gray-600">
+                        Schnelle und zuverlässige Behebung von Störungen sowie präventive Wartung Ihrer Elektroanlagen für maximale Betriebssicherheit.
+                    </p>
+                </div>
+                <!-- Leistung 3 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <svg class="w-16 h-16 text-primary-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-3 font-playfair-display">Smart Home Lösungen</h3>
+                    <p class="text-gray-600">
+                        Wir integrieren intelligente Haussteuerungssysteme, die Ihren Komfort erhöhen, Energie sparen und Ihre Sicherheit verbessern.
+                    </p>
+                </div>
+                <!-- Leistung 4 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <svg class="w-16 h-16 text-primary-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1m-1.636 6.364l-.707-.707M12 21v-1m-6.364-1.636l.707-.707M3 12H4m1.636-6.364l.707.707M6 10H4a2 2 0 00-2 2v2a2 2 0 002 2h2m12-4h2a2 2 0 012 2v2a2 2 0 01-2 2h-2M10 9l3 3m0 0l3 3m-3 0l-3-3m0 0l-3 3"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-3 font-playfair-display">Beleuchtungstechnik</h3>
+                    <p class="text-gray-600">
+                        Von der effizienten LED-Beleuchtung bis zu komplexen Lichtsteuerungen – wir bringen Ihre Räume zum Strahlen.
+                    </p>
+                </div>
+                <!-- Leistung 5 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <svg class="w-16 h-16 text-primary-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-3-1m0 0l-3 1m3-1V9a2 2 0 012-2h2a2 2 0 012 2v3m0 0l3 1m-3-1l-3 1m0 0h3"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-3 font-playfair-display">Elektroplanung</h3>
+                    <p class="text-gray-600">
+                        Wir beraten Sie umfassend bei der Planung Ihrer Elektroinstallationen und entwickeln individuelle Konzepte für maximale Effizienz.
+                    </p>
+                </div>
+                <!-- Leistung 6 (optional, but good to fill 3x2 grid) -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <svg class="w-16 h-16 text-primary-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V3m0 9v3m0-8c-1.11 0-2.08-.402-2.599-1M21 12h-1M3 12H4m2.464-6.464l-.707-.707M19.071 19.071l-.707-.707M5.929 19.071l-.707.707M19.071 5.929l-.707-.707"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-3 font-playfair-display">E-Mobilität</h3>
+                    <p class="text-gray-600">
+                        Installation und Wartung von Ladestationen für Elektrofahrzeuge – wir bereiten Sie auf die Mobilität der Zukunft vor.
+                    </p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#kontakt" class="bg-primary-gold text-white text-lg font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-all duration-300">
+                    Angebot anfragen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie Section -->
+    <section id="galerie" class="py-16 md:py-24 bg-light-bg-accent scroll-reveal">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-12 font-playfair-display">Unsere Projekte</h2>
+            <div class="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-grid-item relative overflow-hidden rounded-lg shadow-md group">
+                    <img data-src="https://images.unsplash.com/photo-1549646875-1e3c2b8c9f0c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Modernes Elektro-Panel" class="lazyload w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="font-semibold text-lg">Moderne Elektroverteilung</p>
+                    </div>
+                </div>
+                <div class="gallery-grid-item relative overflow-hidden rounded-lg shadow-md group">
+                    <img data-src="https://images.unsplash.com/photo-1518349272825-e0c2f8b5a0b9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Elegante Beleuchtungsinstallation" class="lazyload w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="font-semibold text-lg">Individuelle Lichtkonzepte</p>
+                    </div>
+                </div>
+                <div class="gallery-grid-item relative overflow-hidden rounded-lg shadow-md group">
+                    <img data-src="https://images.unsplash.com/photo-1563729575932-5e45a5d8f3b2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Smart Home Verkabelung" class="lazyload w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="font-semibold text-lg">Smart Home Integration</p>
+                    </div>
+                </div>
+                <div class="gallery-grid-item relative overflow-hidden rounded-lg shadow-md group">
+                    <img data-src="https://images.unsplash.com/photo-1581090141361-b4d21f3f4c6a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Elektriker bei der Arbeit" class="lazyload w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="font-semibold text-lg">Präzise Installation</p>
+                    </div>
+                </div>
+                <div class="gallery-grid-item relative overflow-hidden rounded-lg shadow-md group">
+                    <img data-src="https://images.unsplash.com/photo-1556942410-a292d3f34d3d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Professionelles Werkzeug" class="lazyload w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="font-semibold text-lg">Saubere Ausführung</p>
+                    </div>
+                </div>
+                <div class="gallery-grid-item relative overflow-hidden rounded-lg shadow-md group">
+                    <img data-src="https://images.unsplash.com/photo-1629737156943-b26a1114c0ef?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gebäudeverkabelung" class="lazyload w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="font-semibold text-lg">Sichere Verkabelung</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bewertungen Section -->
+    <section id="bewertungen" class="py-16 md:py-24 bg-white scroll-reveal">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl font-bold text-center mb-12 font-playfair-display">Was unsere Kunden sagen</h2>
+            <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review Card 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100 flex flex-col justify-between transform rotate-1 md:rotate-0 translate-x-0 md:-translate-x-4 lg:-translate-x-8">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <span class="text-yellow-500 text-2xl mr-1">★★★★★</span>
+                            <span class="text-gray-600 font-semibold">Anna Müller</span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed italic">
+                            "Herr Figl und sein Team haben unsere gesamte Hausinstallation erneuert. Die Arbeit war tadellos, pünktlich und äußerst professionell. Sehr empfehlenswert!"
+                        </p>
+                    </div>
+                </div>
+                <!-- Review Card 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100 flex flex-col justify-between md:z-10 md:mt-12 lg:mt-0 transform -rotate-1 md:rotate-0 translate-x-0 md:translate-x-4 lg:translate-x-0">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <span class="text-yellow-500 text-2xl mr-1">★★★★☆</span>
+                            <span class="text-gray-600 font-semibold">Peter Schmidt</span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed italic">
+                            "Schnelle Hilfe bei unserem Stromausfall! Innerhalb kürzester Zeit war jemand vor Ort und hat das Problem behoben. Exzellenter Service!"
+                        </p>
+                    </div>
+                </div>
+                <!-- Review Card 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100 flex flex-col justify-between transform rotate-1 md:rotate-0 translate-x-0 md:-translate-x-4 lg:translate-x-8">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <span class="text-yellow-500 text-2xl mr-1">★★★★★</span>
+                            <span class="text-gray-600 font-semibold">Familie Gruber</span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed italic">
+                            "Kompetente Beratung und saubere Ausführung der Installation unserer neuen Beleuchtung. Wir sind sehr zufrieden mit Elektroinstallation Figl."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt Section -->
+    <section id="kontakt" class="py-16 md:py-24 bg-light-bg-accent scroll-reveal">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl font-bold text-center mb-12 font-playfair-display">Kontaktieren Sie uns</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info & Form -->
+                <div>
+                    <h3 class="text-3xl font-semibold mb-6 font-playfair-display">Wir freuen uns auf Ihre Anfrage!</h3>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Egal ob Neuinstallation, Reparatur oder Beratung – kontaktieren Sie uns für ein unverbindliches Angebot.
+                    </p>
+
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold mb-2 font-playfair-display">Adresse</h4>
+                        <p class="text-lg text-gray-700">Haidgasse 9</p>
+                        <p class="text-lg text-gray-700">1020 Wien, Austria</p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold mb-2 font-playfair-display">Telefon</h4>
+                        <p class="text-lg text-gray-700">
+                            <a href="tel:+4312145782" class="text-primary-gold hover:underline">01 2145782</a>
+                        </p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold mb-4 font-playfair-display">Unsere Öffnungszeiten</h4>
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-primary-gold text-white">
+                                    <th class="p-3 border border-primary-gold">Tag</th>
+                                    <th class="p-3 border border-primary-gold">Uhrzeit</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr class="bg-white today-row">
+                                    <td class="p-3 border border-gray-200 font-medium">Montag</td>
+                                    <td class="p-3 border border-gray-200">08:00 - 17:00 Uhr</td>
+                                </tr>
+                                <tr class="bg-gray-50 today-row">
+                                    <td class="p-3 border border-gray-200 font-medium">Dienstag</td>
+                                    <td class="p-3 border border-gray-200">08:00 - 17:00 Uhr</td>
+                                </tr>
+                                <tr class="bg-white today-row">
+                                    <td class="p-3 border border-gray-200 font-medium">Mittwoch</td>
+                                    <td class="p-3 border border-gray-200">08:00 - 17:00 Uhr</td>
+                                </tr>
+                                <tr class="bg-gray-50 today-row">
+                                    <td class="p-3 border border-gray-200 font-medium">Donnerstag</td>
+                                    <td class="p-3 border border-gray-200">08:00 - 17:00 Uhr</td>
+                                </tr>
+                                <tr class="bg-white today-row">
+                                    <td class="p-3 border border-gray-200 font-medium">Freitag</td>
+                                    <td class="p-3 border border-gray-200">08:00 - 14:00 Uhr</td>
+                                </tr>
+                                <tr class="bg-gray-50 today-row">
+                                    <td class="p-3 border border-gray-200 font-medium">Samstag</td>
+                                    <td class="p-3 border border-gray-200">Geschlossen</td>
+                                </tr>
+                                <tr class="bg-white today-row">
+                                    <td class="p-3 border border-gray-200 font-medium">Sonntag</td>
+                                    <td class="p-3 border border-gray-200">Geschlossen</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div>
+                    <h3 class="text-3xl font-semibold mb-6 font-playfair-display">Hier finden Sie uns</h3>
+                    <div class="h-96 w-full bg-gray-200 rounded-lg shadow-md overflow-hidden">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Haidgasse%209,1020%20Wien,Austria&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Standort von Elektroinstallation Figl auf Google Maps">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-text text-white py-12">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-xl font-bold font-playfair-display mb-2">Elektroinstallation Figl</h3>
+                <p class="text-gray-400">Haidgasse 9, 1020 Wien, Austria</p>
+                <p class="text-gray-400">Telefon: <a href="tel:+4312145782" class="hover:text-primary-gold transition-colors duration-300">01 2145782</a></p>
+            </div>
+            <div class="mb-6 md:mb-0">
+                <p class="text-gray-400" id="copyright-year">&copy; <span id="current-year"></span> Elektroinstallation Figl. Alle Rechte vorbehalten.</p>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="text-gray-400 hover:text-primary-gold transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.505 1.492-3.89 3.776-3.89 1.094 0 2.24.195 2.24.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-primary-gold transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.443 3.07a8.73 8.73 0 00-1.23.497A8.736 8.736 0 007.828 3.07L6.81 4.2c-1.666 1.76-2.61 4.19-2.61 6.64v.538l-.027 1.838a6.52 6.52 0 00.323 1.637l.006.012a6.52 6.52 0 00.17 1.43l-.007.012a6.518 6.518 0 00.72 1.95 6.521 6.521 0 001.373 1.373 6.52 6.52 0 001.95.72l.012-.007c.453.117.915.19 1.388.213a6.523 6.523 0 001.637-.027l.012-.007a6.52 6.52 0 001.43-.17l.012.006c.49-.13.96-.307 1.408-.526a6.52 6.52 0 001.373-1.373 6.52 6.52 0 00.72-1.95l-.007-.012a6.52 6.52 0 00.17-1.43l.006-.012a6.52 6.52 0 00-.027-1.637l1.838-.027c.414-2.45-1.126-5.88-2.61-6.64L17.18 3.07a8.73 8.73 0 00-1.23-.497A8.736 8.736 0 0012.443 3.07zm0 1.258a7.472 7.472 0 013.91 1.722c1.23 1.07 1.875 2.652 1.875 4.31v.538l-.02 1.328a5.26 5.26 0 01.258 1.314l.004.008a5.26 5.26 0 01.134 1.13l-.005.008a5.26 5.26 0 01.564 1.543 5.26 5.26 0 011.077 1.077 5.26 5.26 0 011.543.564l.008-.005c.343.093.67.15.986.17a5.26 5.26 0 011.314-.02l.008-.005a5.26 5.26 0 011.13-.134l.008.004c.382-.1.748-.239 1.087-.417a5.26 5.26 0 011.077-1.077 5.26 5.26 0 01.564-1.543l-.005-.008a5.26 5.26 0 01.134-1.13l.004-.008a5.26 5.26 0 01-.02-1.314l1.328-.02c.338-1.658-.307-3.24-1.875-4.31a7.472 7.472 0 01-3.91-1.722L12.443 4.328z" clip-rule="evenodd"></path></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-primary-gold transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.058l-1.928.791A.978.978 0 0117.25 6h-7.5c-1.38 0-2.502 1.12-2.502 2.5v7c0 1.38 1.122 2.5 2.502 2.5h7.5a2.498 2.498 0 002.463-2.091l.165-.892a.978.978 0 01.956-.767h.65a.978.978 0 01.956.767l.165.892a4.998 4.998 0 01-4.926 4.182h-7.5C6.12 20 4 17.88 4 15.25v-7C4 5.22 6.12 3.1 8.25 3.1h7.5c2.13 0 3.885 1.765 4.143 4.026l.035.314a.978.978 0 01-.956.767h-.65a.978.978 0 01-.956-.767l-.165-.892a2.498 2.498 0 00-2.463-2.091h-7.5zM12 9.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const siteHeader = document.getElementById('site-header');
+
+        hamburgerButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            hamburgerButton.classList.toggle('hamburger-open');
+            siteHeader.classList.toggle('bg-white'); // Ensure header is solid when mobile menu is open
+            siteHeader.classList.toggle('lg:bg-transparent'); // Override desktop transparency
+            siteHeader.classList.toggle('lg:text-white');
+            siteHeader.classList.toggle('lg:hover:bg-white/95');
+            siteHeader.classList.toggle('lg:hover:text-dark-text');
+            
+            // Toggle text color for hamburger lines
+            const lines = hamburgerButton.querySelectorAll('.hamburger-line div');
+            lines.forEach(line => line.classList.toggle('bg-white'));
+            lines.forEach(line => line.classList.toggle('bg-dark-text'));
+        });
+
+        // Sticky Header & Nav Link Active State
+        const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+        const sections = document.querySelectorAll('section');
+
+        function updateHeaderAndNav() {
+            const scrollY = window.scrollY;
+
+            // Sticky Header Logic
+            if (scrollY > 50) {
+                siteHeader.classList.add('header-sticky', 'bg-white', 'text-dark-text');
+                siteHeader.classList.remove('lg:bg-transparent', 'lg:text-white');
+            } else {
+                siteHeader.classList.remove('header-sticky', 'bg-white', 'text-dark-text');
+                if (window.innerWidth >= 1024 && !mobileMenu.classList.contains('hidden')) { // Keep solid if mobile menu is open on desktop
+                    siteHeader.classList.add('bg-white', 'text-dark-text');
+                } else if (window.innerWidth >= 1024) { // Only revert to transparent on desktop
+                    siteHeader.classList.add('lg:bg-transparent', 'lg:text-white');
+                }
+            }
+            
+            // Highlight current section in navigation
+            let currentActive = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - siteHeader.offsetHeight - 20; // Adjust for header height
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    currentActive = section.id;
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('nav-link-active', 'text-primary-gold');
+                if (link.getAttribute('href').includes(currentActive)) {
+                    link.classList.add('nav-link-active', 'text-primary-gold');
+                }
+            });
+
+            // Handle header text color on hero section for desktop
+            if (window.innerWidth >= 1024) {
+                if (currentActive === 'hero' && scrollY <= 50) {
+                    siteHeader.classList.add('lg:text-white');
+                    siteHeader.querySelectorAll('.nav-link').forEach(link => link.classList.add('text-white'));
+                } else {
+                    siteHeader.classList.remove('lg:text-white');
+                    siteHeader.querySelectorAll('.nav-link').forEach(link => link.classList.remove('text-white'));
+                }
+            }
+        }
+
+        window.addEventListener('scroll', updateHeaderAndNav);
+        window.addEventListener('resize', updateHeaderAndNav); // Update on resize to handle desktop/mobile changes
+        document.addEventListener('DOMContentLoaded', updateHeaderAndNav); // Initial check
+
+        // Intersection Observer for scroll-reveal animations
+        const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        scrollRevealElements.forEach(el => observer.observe(el));
+
+        // Highlight today in Öffnungszeiten
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            const dayOfWeek = today.getDay(); // Sunday - 0, Monday - 1, ..., Saturday - 6
+            const rows = document.querySelectorAll('.today-row');
+            
+            // Adjust index: Our table starts Monday (index 0)
+            const tableDayIndex = (dayOfWeek === 0) ? 6 : dayOfWeek - 1; 
+
+            if (rows[tableDayIndex]) {
+                rows[tableDayIndex].classList.add('bg-primary-gold', 'text-white');
+                rows[tableDayIndex].querySelectorAll('td').forEach(td => {
+                    td.classList.remove('border-gray-200', 'text-gray-700');
+                    td.classList.add('border-primary-gold', 'text-white');
+                });
+            }
+        });
+
+        // Set current year for copyright
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Lazy load images
+        document.addEventListener("DOMContentLoaded", function() {
+            var lazyloadImages = document.querySelectorAll("img.lazyload");
+            var lazyloadThrottleTimeout;
+
+            function lazyload () {
+                if(lazyloadThrottleTimeout) {
+                    clearTimeout(lazyloadThrottleTimeout);
+                }    
+                lazyloadThrottleTimeout = setTimeout(function() {
+                    var scrollTop = window.pageYOffset;
+                    lazyloadImages.forEach(function(img) {
+                        if(img.offsetTop < (window.innerHeight + scrollTop + 100)) {
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazyload');
+                        }
+                    });
+                    if(lazyloadImages.length == 0) { 
+                        document.removeEventListener("scroll", lazyload);
+                        window.removeEventListener("resize", lazyload);
+                        window.removeEventListener("orientationChange", lazyload);
+                    }
+                }, 20);
+            }
+
+            document.addEventListener("scroll", lazyload);
+            window.addEventListener("resize", lazyload);
+            window.addEventListener("orientationChange", lazyload);
+            lazyload(); // Initial load for images already in viewport
+        });
+    </script>
+</body>
+</html>
+```
