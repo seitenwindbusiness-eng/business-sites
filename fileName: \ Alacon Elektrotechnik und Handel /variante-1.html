@@ -1,0 +1,463 @@
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alacon Elektrotechnik und Handel – Ihr Partner in Wien</title>
+    <meta name="description" content="Alacon Elektrotechnik und Handel bietet professionelle Elektroinstallationen, Reparaturen und moderne Smart Home Lösungen in Wien. 24/7 Notdienst.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-dark: #1a1a1a;
+            --accent-gold: #d97706; /* Tailwind amber-600 */
+            --accent-gold-light: #fef3c7; /* Tailwind amber-50 */
+            --text-light: #f3f4f6; /* Tailwind gray-100 */
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-dark);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom text-shadow for hero heading */
+        .hero-text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        /* Diagonal section divider */
+        .diagonal-divider-bottom {
+            position: relative;
+        }
+        .diagonal-divider-bottom::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px; /* Adjust height for desired angle */
+            background: linear-gradient(to top left, var(--accent-gold-light) 50%, transparent 50%);
+            transform: skewY(-2deg); /* Adjust angle */
+            transform-origin: 100% 0;
+            z-index: 10;
+        }
+        .diagonal-divider-top {
+             position: relative;
+        }
+        .diagonal-divider-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px; /* Adjust height for desired angle */
+            background: linear-gradient(to bottom right, var(--accent-gold-light) 50%, transparent 50%);
+            transform: skewY(-2deg); /* Adjust angle */
+            transform-origin: 0% 0;
+            z-index: 10;
+        }
+        .section-separator {
+            position: relative;
+            background-color: var(--accent-gold-light);
+            padding-bottom: 8rem; /* Enough space for the diagonal cut */
+        }
+        .section-separator::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px; /* Height of the diagonal cut */
+            background: white; /* Next section background */
+            clip-path: polygon(0 100%, 100% 0, 100% 100%);
+        }
+        .section-separator-reverse::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px; /* Height of the diagonal cut */
+            background: var(--accent-gold-light); /* Next section background */
+            clip-path: polygon(0 0, 100% 100%, 0 100%);
+        }
+
+        /* Initial state for fade-in animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hamburger menu styling */
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 24px;
+            height: 24px;
+        }
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            transition: all 0.3s ease-in-out;
+        }
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+        .nav-menu-mobile {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-menu-mobile.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="site-header" class="fixed top-0 left-0 w-full bg-transparent text-white py-4 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#hero" class="text-3xl font-bold font-playfair tracking-wide text-white">Alacon</a>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#hero" class="hover:text-amber-500 transition-colors duration-200">Start</a></li>
+                <li><a href="#ueber-uns" class="hover:text-amber-500 transition-colors duration-200">Über uns</a></li>
+                <li><a href="#leistungen" class="hover:text-amber-500 transition-colors duration-200">Leistungen</a></li>
+                <li><a href="#galerie" class="hover:text-amber-500 transition-colors duration-200">Galerie</a></li>
+                <li><a href="#bewertungen" class="hover:text-amber-500 transition-colors duration-200">Bewertungen</a></li>
+                <li><a href="#kontakt" class="hover:text-amber-500 transition-colors duration-200">Kontakt</a></li>
+            </ul>
+
+            <!-- Mobile Hamburger Icon -->
+            <button id="hamburger-button" class="md:hidden hamburger z-50">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="nav-menu-mobile fixed top-0 right-0 h-full w-full bg-gray-900 bg-opacity-95 md:hidden flex flex-col items-center justify-center space-y-8 text-xl z-40">
+                <a href="#hero" class="text-white hover:text-amber-500 transition-colors duration-200" data-menu-item>Start</a>
+                <a href="#ueber-uns" class="text-white hover:text-amber-500 transition-colors duration-200" data-menu-item>Über uns</a>
+                <a href="#leistungen" class="text-white hover:text-amber-500 transition-colors duration-200" data-menu-item>Leistungen</a>
+                <a href="#galerie" class="text-white hover:text-amber-500 transition-colors duration-200" data-menu-item>Galerie</a>
+                <a href="#bewertungen" class="text-white hover:text-amber-500 transition-colors duration-200" data-menu-item>Bewertungen</a>
+                <a href="#kontakt" class="text-white hover:text-amber-500 transition-colors duration-200" data-menu-item>Kontakt</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden pb-20 diagonal-divider-top">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AU_ZVEHc4RYJABD0Ktu3CrjNTJlEP1bwByEjgo1WVNO8SLLjAqDz_DEt8YCGvBAEHJoeNtxT3oeXN9YLV7UA1ry-OK1l3OmGVRlni3MtLpd44-EQcvtYo9z7iuL4K48cjz-Vvdn8Wx4f_GU6KPnk4Zd2xhhZH6wsrsoCOjEOYPbLMhp-N6FhVj7pkmnYw9Zinj2AMOn3XFpLqCvqV62kB9MRX8jMmBFEwEQ-VO8e7i-fiKOT99TTshtekrAsA2Kyg0PlCBHsi7rE6XTYi0NAmPaEVu6PRYUUdzjtO6ryUr1BUygTtQ&key=AIzaSyC96xPvKmlEn-_82qHJFi6cGzXi4vzrqIE" 
+                 alt="Hero Bild Alacon Elektrotechnik" 
+                 class="absolute inset-0 w-full h-full object-cover lazyload" loading="lazy">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative z-10 p-6 max-w-4xl mx-auto text-white hero-text-shadow fade-in">
+                <h1 class="text-5xl md:text-7xl font-playfair font-bold leading-tight mb-4 animate-fadeInUp">
+                    Alacon Elektrotechnik und Handel
+                </h1>
+                <p class="text-xl md:text-2xl font-light mb-8">
+                    Ihr verlässlicher Partner für elektrische Lösungen in Wien – 24 Stunden, 7 Tage die Woche.
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
+                    <a href="tel:06606072052" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg text-lg">
+                        Jetzt kontaktieren
+                    </a>
+                    <div class="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full py-2 px-5 text-lg">
+                        <span class="text-amber-400">★★★</span>
+                        <span class="text-white">3 (2 Bewertungen)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Über uns Section -->
+        <section id="ueber-uns" class="py-20 bg-white relative overflow-hidden fade-in">
+            <div class="container mx-auto px-6 max-w-3xl text-center">
+                <h2 class="text-4xl font-playfair font-bold mb-8 fade-in">Über Alacon Elektrotechnik</h2>
+                <p class="text-lg leading-relaxed mb-6 fade-in">
+                    Alacon Elektrotechnik und Handel ist Ihr etablierter Experte für Elektrizität in Wien. Mit jahrelanger Erfahrung und einem tiefen Verständnis für moderne Elektroinstallationen bieten wir umfassende Dienstleistungen für Privat- und Geschäftskunden. Unser Team aus qualifizierten Elektrikern steht für höchste Qualität, Zuverlässigkeit und Sicherheit bei jedem Projekt.
+                </p>
+                <p class="text-lg leading-relaxed fade-in">
+                    Von der Neuinstallation bis zur Wartung, von der Fehlerbehebung bis zur Implementierung smarter Gebäudetechnik – wir sind stets bestrebt, maßgeschneiderte Lösungen zu liefern, die nicht nur funktional, sondern auch zukunftssicher sind. Bei Alacon setzen wir auf Präzision, Effizienz und einen kundenorientierten Service, der rund um die Uhr für Sie da ist.
+                </p>
+            </div>
+        </section>
+
+        <!-- Leistungen Section -->
+        <section id="leistungen" class="py-20 bg-amber-50 relative section-separator-reverse overflow-hidden fade-in">
+            <div class="container mx-auto px-6 fade-in">
+                <h2 class="text-4xl font-playfair font-bold text-center mb-12 fade-in">Unsere Kompetenzen</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Leistung 1 -->
+                    <div class="bg-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition-transform duration-300 group fade-in">
+                        <div class="text-amber-600 mb-4 flex justify-center text-5xl">💡</div>
+                        <h3 class="text-2xl font-playfair font-semibold mb-3 text-center group-hover:text-amber-600">Elektroinstallationen</h3>
+                        <p class="text-gray-700 text-center">Planung und Durchführung von Neuinstallationen sowie Modernisierungen für Wohn- und Gewerbeobjekte.</p>
+                    </div>
+                    <!-- Leistung 2 -->
+                    <div class="bg-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition-transform duration-300 group fade-in">
+                        <div class="text-amber-600 mb-4 flex justify-center text-5xl">🔧</div>
+                        <h3 class="text-2xl font-playfair font-semibold mb-3 text-center group-hover:text-amber-600">Reparaturen & Wartung</h3>
+                        <p class="text-gray-700 text-center">Schnelle Fehlerdiagnose und professionelle Reparaturen, regelmäßige Wartung für Ihre Sicherheit.</p>
+                    </div>
+                    <!-- Leistung 3 -->
+                    <div class="bg-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition-transform duration-300 group fade-in">
+                        <div class="text-amber-600 mb-4 flex justify-center text-5xl">🏠</div>
+                        <h3 class="text-2xl font-playfair font-semibold mb-3 text-center group-hover:text-amber-600">Smart Home Lösungen</h3>
+                        <p class="text-gray-700 text-center">Installation intelligenter Systeme für Beleuchtung, Heizung und Sicherheit – Komfort und Effizienz.</p>
+                    </div>
+                    <!-- Leistung 4 -->
+                    <div class="bg-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition-transform duration-300 group fade-in">
+                        <div class="text-amber-600 mb-4 flex justify-center text-5xl">⚡</div>
+                        <h3 class="text-2xl font-playfair font-semibold mb-3 text-center group-hover:text-amber-600">E-Check & Überprüfungen</h3>
+                        <p class="text-gray-700 text-center">Regelmäßige Prüfung elektrischer Anlagen nach gesetzlichen Vorschriften für Ihre Sicherheit.</p>
+                    </div>
+                    <!-- Leistung 5 -->
+                    <div class="bg-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition-transform duration-300 group fade-in">
+                        <div class="text-amber-600 mb-4 flex justify-center text-5xl">🚨</div>
+                        <h3 class="text-2xl font-playfair font-semibold mb-3 text-center group-hover:text-amber-600">Sicherheitsanlagen</h3>
+                        <p class="text-gray-700 text-center">Installation von Alarmanlagen, Videoüberwachung und Zutrittssystemen für umfassenden Schutz.</p>
+                    </div>
+                    <!-- Leistung 6 -->
+                    <div class="bg-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition-transform duration-300 group fade-in">
+                        <div class="text-amber-600 mb-4 flex justify-center text-5xl">🌐</div>
+                        <h3 class="text-2xl font-playfair font-semibold mb-3 text-center group-hover:text-amber-600">Netzwerk & Kommunikation</h3>
+                        <p class="text-gray-700 text-center">Verkabelung und Einrichtung von Datennetzwerken für schnelle und zuverlässige Kommunikation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galerie Section -->
+        <section id="galerie" class="py-20 bg-white fade-in">
+            <div class="container mx-auto px-6 fade-in">
+                <h2 class="text-4xl font-playfair font-bold text-center mb-12 fade-in">Unsere Projekte in Bildern</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AU_ZVEHc4RYJABD0Ktu3CrjNTJlEP1bwByEjgo1WVNO8SLLjAqDz_DEt8YCGvBAEHJoeNtxT3oeXN9YLVUA1ry-OK1l3OmGVRlni3MtLpd44-EQcvtYo9z7iuL4K48cjz-Vvdn8Wx4f_GU6KPnk4Zd2xhhZH6wsrsoCOjEOYPbLMhp-N6FhVj7pkmnYw9Zinj2AMOn3XFpLqCvqV62kB9MRX8jMmBFEwEQ-VO8e7i-fiKOT99TTshtekrAsA2Kyg0PlCBHsi7rE6XTYi0NAmPaEVu6PRYUUdzjtO6ryUr1BUygTtQ&key=AIzaSyC96xPvKmlEn-_82qHJFi6cGzXi4vzrqIE" 
+                         alt="Galerie Bild 1 - Elektroinstallation" class="w-full h-80 object-cover rounded-lg shadow-md lazyload fade-in" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1621905252507-b352dd6c8c4a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Galerie Bild 2 - Kabelverlegung" class="w-full h-80 object-cover rounded-lg shadow-md lazyload fade-in" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Galerie Bild 3 - Schaltkasten" class="w-full h-80 object-cover rounded-lg shadow-md lazyload fade-in" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1616401662580-f0e21950e300?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Galerie Bild 4 - Moderne Beleuchtung" class="w-full h-80 object-cover rounded-lg shadow-md lazyload fade-in" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1627993074092-23f2f0a8c25f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Galerie Bild 5 - Smart Home Steuerung" class="w-full h-80 object-cover rounded-lg shadow-md lazyload fade-in" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1601630138541-6927909c8535?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Galerie Bild 6 - Professionelle Verkabelung" class="w-full h-80 object-cover rounded-lg shadow-md lazyload fade-in" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Bewertungen Section -->
+        <section id="bewertungen" class="py-20 bg-amber-50 fade-in">
+            <div class="container mx-auto px-6 fade-in">
+                <h2 class="text-4xl font-playfair font-bold text-center mb-12 fade-in">Was unsere Kunden sagen</h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Bewertung 1 -->
+                    <div class="bg-white rounded-lg shadow-xl p-6 fade-in">
+                        <div class="flex items-center mb-4">
+                            <div class="text-amber-400 text-xl mr-2">★★★</div>
+                            <span class="font-semibold text-lg">Max Mustermann</span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed italic">
+                            „Ein hervorragender Service! Die Jungs von Alacon waren schnell, professionell und haben unsere gesamte Elektroinstallation auf den neuesten Stand gebracht. Absolut empfehlenswert!“
+                        </p>
+                    </div>
+                    <!-- Bewertung 2 -->
+                    <div class="bg-white rounded-lg shadow-xl p-6 fade-in">
+                        <div class="flex items-center mb-4">
+                            <div class="text-amber-400 text-xl mr-2">★★★</div>
+                            <span class="font-semibold text-lg">Anna Schmidt</span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed italic">
+                            „Ich hatte einen Stromausfall mitten in der Nacht. Alacon war sofort zur Stelle und hat das Problem umgehend behoben. Herzlichen Dank für die schnelle Hilfe!“
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontakt Section -->
+        <section id="kontakt" class="py-20 bg-white fade-in">
+            <div class="container mx-auto px-6 fade-in">
+                <h2 class="text-4xl font-playfair font-bold text-center mb-12 fade-in">Kontaktieren Sie uns</h2>
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <!-- Kontaktinformationen & Öffnungszeiten -->
+                    <div class="lg:w-1/2 fade-in">
+                        <h3 class="text-3xl font-playfair font-semibold mb-6">Wir sind für Sie da</h3>
+                        <div class="mb-6">
+                            <p class="text-lg mb-2"><strong class="text-amber-600">Telefon:</strong> <a href="tel:06606072052" class="hover:underline">0660 6072052</a></p>
+                            <p class="text-lg mb-2"><strong class="text-amber-600">Adresse:</strong> Kühnpl. 2/1-4, 1040 Wien, Austria</p>
+                        </div>
+
+                        <h4 class="text-2xl font-playfair font-semibold mb-4">Unsere Öffnungszeiten</h4>
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="py-3 px-4 border-b-2 border-amber-600">Tag</th>
+                                    <th class="py-3 px-4 border-b-2 border-amber-600">Uhrzeit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="day-1" class="border-b border-gray-200">
+                                    <td class="py-2 px-4">Montag</td>
+                                    <td class="py-2 px-4">24 Stunden geöffnet</td>
+                                </tr>
+                                <tr id="day-2" class="border-b border-gray-200">
+                                    <td class="py-2 px-4">Dienstag</td>
+                                    <td class="py-2 px-4">24 Stunden geöffnet</td>
+                                </tr>
+                                <tr id="day-3" class="border-b border-gray-200">
+                                    <td class="py-2 px-4">Mittwoch</td>
+                                    <td class="py-2 px-4">24 Stunden geöffnet</td>
+                                </tr>
+                                <tr id="day-4" class="border-b border-gray-200">
+                                    <td class="py-2 px-4">Donnerstag</td>
+                                    <td class="py-2 px-4">24 Stunden geöffnet</td>
+                                </tr>
+                                <tr id="day-5" class="border-b border-gray-200">
+                                    <td class="py-2 px-4">Freitag</td>
+                                    <td class="py-2 px-4">24 Stunden geöffnet</td>
+                                </tr>
+                                <tr id="day-6" class="border-b border-gray-200">
+                                    <td class="py-2 px-4">Samstag</td>
+                                    <td class="py-2 px-4">24 Stunden geöffnet</td>
+                                </tr>
+                                <tr id="day-0" class="border-b border-gray-200">
+                                    <td class="py-2 px-4">Sonntag</td>
+                                    <td class="py-2 px-4">24 Stunden geöffnet</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Google Maps iframe -->
+                    <div class="lg:w-1/2 bg-gray-100 rounded-lg shadow-xl overflow-hidden h-96 lg:h-auto fade-in">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2657.442998782337!2d16.360155676906233!3d48.188701971239845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476da8121d5a711b%3A0xc3f5b7e9a8f2c300!2sK%C3%BChnpl.%202%2F1-4%2C%201040%20Wien%2C%20Austria!5e0!3m2!1sde!2sat!4v1700000000000!5m2!1sde!2sat" 
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 text-center fade-in">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-playfair font-bold mb-4">Alacon Elektrotechnik und Handel</h3>
+            <p class="mb-2">Kühnpl. 2/1-4, 1040 Wien, Austria</p>
+            <p class="mb-4">Telefon: <a href="tel:06606072052" class="hover:text-amber-500">0660 6072052</a></p>
+            
+            <div class="flex justify-center space-x-6 mb-6">
+                <!-- Social Media Placeholders -->
+                <a href="#" class="text-gray-400 hover:text-amber-500 transition-colors duration-200" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.588-1.333h2.412v-3h-3.412c-4.145 0-5.588 2.805-5.588 5.667v1.333z"/></svg></a>
+                <a href="#" class="text-gray-400 hover:text-amber-500 transition-colors duration-200" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c3.249 0 3.655.013 4.947.072 1.173.058 1.844.254 2.27.424.437.178.756.402 1.05.696s.518.613.696 1.05c.17.426.366 1.097.424 2.27.059 1.292.072 1.698.072 4.947s-.013 3.655-.072 4.947c-.058 1.173-.254 1.844-.424 2.27-.178.437-.402.756-.696 1.05s-.613.518-1.05.696c-.426.17-1.097.366-2.27.424-1.292.059-1.698.072-4.947.072s-3.655-.013-4.947-.072c-1.173-.058-1.844-.254-2.27-.424-.437-.178-.756-.402-1.05-.696s-.518-.613-.696-1.05c-.17-.426-.366-1.097-.424-2.27-.059-1.292-.072-1.698-.072-4.947s.013-3.655.072-4.947c.058-1.173.254-1.844.424-2.27.178-.437.402-.756.696-1.05s.613-.518 1.05-.696c.426-.17 1.097-.366 2.27-.424c1.292-.059 1.698-.072 4.947-.072zm0-2c-3.328 0-3.742.014-5.04.072-1.178.059-1.93.28-2.502.508-.604.238-1.127.595-1.637 1.105-.51.51-.867 1.033-1.105 1.637-.228.572-.449 1.324-.508 2.502-.058 1.298-.072 1.712-.072 5.04s.014 3.742.072 5.04c.059 1.178.28 1.93.508 2.502.238.604.595 1.127 1.105 1.637.51.51 1.033.867 1.637 1.105.572.228 1.324.449 2.502.508 1.298.058 1.712.072 5.04.072s3.742-.014 5.04-.072c1.178-.059 1.93-.28 2.502-.508.604-.238 1.127-.595 1.637-1.105.51-.51.867-1.033 1.105-1.637.228-.572.449-1.324.508-2.502.058-1.298.072-1.712.072-5.04s-.014-3.742-.072-5.04c-.059-1.178-.28-1.93-.508-2.502-.238-.604-.595-1.127-1.105-1.637-.51-.51-1.033-.867-1.637-1.105-.572-.228-1.324-.449-2.502-.508-1.298-.058-1.712-.072-5.04-.072zm0 5.838c-3.393 0-6.162 2.769-6.162 6.162s2.769 6.162 6.162 6.162 6.162-2.769 6.162-6.162-2.769-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.472-11.472c-.786 0-1.428.642-1.428 1.428s.642 1.428 1.428 1.428 1.428-.642 1.428-1.428-.642-1.428-1.428-1.428z"/></svg></a>
+                <a href="#" class="text-gray-400 hover:text-amber-500 transition-colors duration-200" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            </div>
+
+            <p class="text-gray-400 text-sm">&copy; <span id="current-year"></span> Alacon Elektrotechnik und Handel. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky Header Logic
+        const header = document.getElementById('site-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-gray-900', 'shadow-lg', 'py-3');
+                header.classList.remove('bg-transparent', 'py-4');
+            } else {
+                header.classList.remove('bg-gray-900', 'shadow-lg', 'py-3');
+                header.classList.add('bg-transparent', 'py-4');
+            }
+        });
+
+        // Hamburger Menu Logic
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuItems = mobileMenu.querySelectorAll('[data-menu-item]');
+
+        hamburgerButton.addEventListener('click', () => {
+            hamburgerButton.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+            document.body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
+        });
+
+        mobileMenuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                hamburgerButton.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                document.body.classList.remove('overflow-hidden');
+            });
+        });
+
+        // Smooth Scroll (CSS handles this, but adding for completeness if JS fallback were needed)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for Fade-in Animations
+        const fadeIns = document.querySelectorAll('.fade-in');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, observerOptions);
+
+        fadeIns.forEach(el => observer.observe(el));
+
+        // Highlight Today's Opening Hours
+        const today = new Date().getDay(); // 0 for Sunday, 1 for Monday, etc.
+        const dayRow = document.getElementById(`day-${today}`);
+        if (dayRow) {
+            dayRow.classList.add('bg-amber-100', 'font-bold', 'text-amber-800');
+        }
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
